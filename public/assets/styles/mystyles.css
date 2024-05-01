@@ -1,0 +1,257 @@
+/*-------------------------*/
+/*         general         */
+/*-------------------------*/
+
+body {
+    margin: 0;
+
+}
+
+@font-face {
+    font-family: 'yekan';
+    src: url("../fonts/YekanBakhFaNum-Regular.woff");
+}
+
+
+
+/*-------------------------*/
+/*         typography       */
+/*-------------------------*/
+
+.yekan {
+    font-family: yekan !important;
+}
+
+
+
+/*-------------------------*/
+/*         orbit           */
+/*-------------------------*/
+
+.orbit-container {
+   height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+
+
+
+
+}
+
+.orbit-head {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.12);
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1000;
+    backdrop-filter: blur(0.1rem);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    top: 35%;
+
+    text-align: center;
+}
+
+
+
+
+@keyframes planet1 {
+    from {
+        transform: rotate(0deg) translateX(14vw) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(14vw) rotate(-360deg);
+    }
+}
+@keyframes planet1-2 {
+    from {
+        transform: rotate(0deg) translateX(-14vw) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(-14vw) rotate(-360deg);
+    }
+}
+
+
+
+
+@keyframes planet2 {
+    from {
+        transform: rotate(0deg) translateX(20vw) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(20vw) rotate(-360deg);
+    }
+}
+@keyframes planet2-1 {
+    from {
+        transform: rotate(0deg) translateX(-20vw) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(-20vw) rotate(-360deg);
+    }
+}
+@keyframes planet2-2 {
+    from {
+        transform: rotate(0deg) translateX(-20vw) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(-20vw) rotate(-360deg);
+    }
+}
+
+
+
+
+
+
+@keyframes planet3 {
+    from {
+        transform: rotate(0deg) translateY(27vw) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateY(27vw) rotate(-360deg);
+    }
+}
+@keyframes planet3-1 {
+    from {
+        transform: rotate(0deg) translateY(-27vw) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateY(-27vw) rotate(-360deg);
+    }
+}
+
+
+
+
+.one {
+    border:0.4rem dotted rgba(37, 37, 37, 0.3);
+    position: absolute;
+    border-radius: 50%;
+
+
+    width: 40%;
+    height: 55vh;
+    top: 22.5vh;
+    left:30%;
+}
+
+.inner-one-one {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet1 12s linear infinite;
+}
+.inner-one-two {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet1-2 16s linear infinite;
+}
+
+.two {
+    border:0.4rem dotted rgba(37, 37, 37, 0.3);
+    position: absolute;
+    border-radius: 50%;
+
+
+    width: 60%;
+    height: 75vh;
+    top: 12.5vh;
+    left: 20%;
+}
+.inner-two-one {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet2 16s linear infinite;
+}
+
+.inner-two-two {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet2-1 21s linear infinite;
+}
+
+.inner-two-three {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet2-2 24s linear infinite;
+}
+
+.three {
+    border:0.3rem dotted rgba(37, 37, 37, 0.3);
+    position: absolute;
+    border-radius: 50%;
+
+
+    width: 80%;
+    height: 95vh;
+    top: 2.5vh;
+    left: 10%;
+}
+
+.inner-three-one {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet3 20s linear infinite;
+}
+
+.inner-three-two {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet3-1 24s linear infinite;
+}
+
+.inner-three-three {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet3-1 27s linear infinite;
+}
+
+.inner-three-four {
+    position: relative;
+    top: 50%;
+
+    text-align: center;
+    animation: planet3 30s linear infinite;
+}
+
+
+/*-------------------------*/
+/*  border and border rad  */
+/*-------------------------*/
+
+.borderrad1 {
+    border-radius: 1.6rem;
+}
+
+
+
+/*-------------------------*/
+/*         navbar          */
+/*-------------------------*/
+
+.nav {
+    min-height: 3rem;
+}
