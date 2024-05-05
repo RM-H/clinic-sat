@@ -1,14 +1,22 @@
 import {Outlet} from 'react-router-dom'
-import {Nav} from '../components'
+import {Nav , Footer} from '../components'
 
 const Mainlayout = () => {
     return (
+        <>
 
-        <div  style={{ minHeight:'100vh'}}>
+
+        <div className='container'  style={{ minHeight:'100vh'}}>
 
             <Nav/>
-            <Outlet/>
+            <main>
+                <Outlet/>
+            </main>
+
+
         </div>
+    <Footer/>
+        </>
     )
 }
 export default Mainlayout

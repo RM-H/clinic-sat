@@ -1,7 +1,21 @@
 import * as React from 'react';
-import {Box, Divider, Drawer, List, ListItem, ListItemButton, Typography} from '@mui/material'
+import {
+    AppBar, Avatar,
+    Box,
+    Button,
+    Divider,
+    Drawer,
+    IconButton,
+    List,
+    ListItem,
+    ListItemButton,
+    Toolbar,
+    Typography
+} from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
-import {useState} from "react";
+import {useState } from "react";
+import {Menu} from '@mui/icons-material'
+import {Link,useNavigate} from 'react-router-dom'
 
 const Navbar = (props) => {
     const [activePage, setActivePage] = useState(0)
@@ -16,6 +30,8 @@ const Navbar = (props) => {
         setTimeout(() => setMobileOpen((prevState) => !prevState), 300)
 
     };
+
+    const nav = useNavigate()
     const drawer = (
         <Box sx={{textAlign: 'center'}}>
             <Typography onClick={() => {
@@ -99,8 +115,8 @@ const Navbar = (props) => {
 
 
                 <a href="https://ofoghiranian.com/work-with-us/" target={'_blank'}>
-                    <ListItem  disablePadding>
-                        <ListItemButton  sx={{textAlign: 'center', height: '3rem'}}>
+                    <ListItem disablePadding>
+                        <ListItemButton sx={{textAlign: 'center', height: '3rem'}}>
                             <Typography className='kook' variant="h6" sx={{my: 2}}>
                                 فرصت های شغلی
                             </Typography>
@@ -109,8 +125,8 @@ const Navbar = (props) => {
 
                 </a>
                 <a href="https://bilitim.net/login" target={'_blank'}>
-                    <ListItem  disablePadding>
-                        <ListItemButton  sx={{textAlign: 'center', height: '3rem'}}>
+                    <ListItem disablePadding>
+                        <ListItemButton sx={{textAlign: 'center', height: '3rem'}}>
                             <Typography className='kook' variant="h6" sx={{my: 2}}>
                                 ورود/ثبت نام
                             </Typography>
@@ -125,41 +141,90 @@ const Navbar = (props) => {
     );
     const container = window !== undefined ? () => window().document.body : undefined;
     return (
-      <nav className='nav'>
-
-          {/*Responsive Drawer*/}
-          <nav>
-              <Drawer
-                  container={container}
-                  variant="temporary"
-                  open={mobileOpen}
-                  onClose={handleDrawerToggle}
-                  anchor='right'
-                  ModalProps={{
-                      keepMounted: true, // Better open performance on mobile.
-                  }}
-                  sx={{
-                      display: {xs: 'block', sm: 'block', md: 'block'},
-                      '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth , backgroundColor:'rgba(255, 255, 255, 0.93)' , backdropFilter:'blur(3px)' , borderLeft:'0.3rem solid #00A651' },
-
-                  }}
-              >
-
-                  {drawer}
-              </Drawer>
-          </nav>
-
-          {/*Responsive Drawer*/}
-          <Grid container>
-              <Grid xs={12}>
-                  asd
-              </Grid>
+        <>
 
 
+            {/*Responsive Drawer*/}
+            <nav>
+                <Drawer
+                    container={container}
+                    variant="temporary"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    anchor='right'
+                    ModalProps={{
+                        keepMounted: true, // Better open performance on mobile.
+                    }}
+                    sx={{
+                        display: {xs: 'block', sm: 'block', md: 'block'},
+                        '& .MuiDrawer-paper': {
+                            boxSizing: 'border-box',
+                            width: drawerWidth,
+                            backgroundColor: 'rgba(255, 255, 255, 0.93)',
+                            backdropFilter: 'blur(3px)',
+                            borderLeft: '0.3rem solid #00A651'
+                        },
 
-          </Grid>
+                    }}
+                >
 
-      </nav>
+                    {drawer}
+                </Drawer>
+            </nav>
+
+            {/*Responsive Drawer*/}
+            <Box sx={{flexGrow: 1 , direction:'rtl'}}>
+                <AppBar position="fixed" sx={{
+                    '&.MuiAppBar-root': {
+                        backgroundColor:'rgba(255,255,255,0.36)' ,
+                        backdropFilter: 'blur(1rem)'
+
+                    }
+                }}>
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ml: 1, display: {lg: 'none'}}}
+
+                        >
+                            <Menu/>
+                        </IconButton>
+
+                        <Grid container  sx={{width:'100%' }}>
+                            <Grid xs={5} sx={{display:'flex', justifyContent:'end'}}>
+                                <Button  onClick={()=>nav('/')} className='underline yekan clrblack' color="primary">صفحه اصلی</Button>
+
+                                    <Button onClick={()=>{
+                                        let el = document.getElementById('services');
+                                        el.scrollIntoView({behavior:"smooth"})
+
+                                    }}  className='underline yekan clrblack' color="primary">خدمات کلینیک</Button>
+
+
+
+
+                            </Grid>
+
+                            <Grid  xs={2} sx={{display:'flex', justifyContent:'center'}}>
+
+                                <img src="/assets/images/logo.svg"  alt="logo" style={{ borderRadius:'50%' }} width={50} height={50}/>
+                            </Grid>
+
+                            <Grid xs={5} sx={{display:'flex', justifyContent:'start'}}>
+                                <Button className='underline yekan clrblack' color="primary">بلاگ</Button>
+                                <Button onClick={()=>nav('/contact/')} className='underline yekan clrblack' color="primary">تماس با ما</Button>
+                            </Grid>
+
+                        </Grid>
+
+                    </Toolbar>
+                </AppBar>
+            </Box>
+
+        </>
     );
 }
 export default Navbar;

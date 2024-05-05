@@ -9,7 +9,45 @@ body {
 
 @font-face {
     font-family: 'yekan';
-    src: url("../fonts/YekanBakhFaNum-Regular.woff");
+    src: url("../fonts/YekanBakhFaNum-Bold.woff2");
+}
+
+
+.container {
+    width: 1900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.width100 {
+    width: 100%;
+}
+
+/*-------------------------*/
+/*         colors          */
+/*-------------------------*/
+
+.clrone {
+    background-color: #1a5ca4 !important;
+}
+.clronetext {
+    color: #1a5ca4;
+}
+.clrtwo {
+    background-color: rgb(253 234 121);
+}
+
+.clrthree {
+    background-color: rgb(209 237 251);
+}
+
+
+.clrfour {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.clrblack {
+    color: black !important;
 }
 
 
@@ -42,7 +80,8 @@ body {
 .orbit-head {
     position: relative;
     background-color: rgba(0, 0, 0, 0.12);
-    width: 45%;
+    width: 30vw;
+    height: 30vw;
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
@@ -53,9 +92,38 @@ body {
     justify-items: center;
     justify-content: center;
     align-items: center;
-    top: 35%;
+    top: 30%;
+    box-shadow: 0px 0px 18px 1px #1a5ca4;
 
     text-align: center;
+    border-radius: 50%;
+}
+
+.orbit-head img {
+    width: 9rem;
+    position: absolute;
+    top: -10%;
+
+    z-index: -1;
+    animation:logoanimation 6s linear infinite ;
+}
+
+
+@keyframes logoanimation {
+    25% {
+        transform: translateY(1rem);
+    }
+    50% {
+        transform: translateY(0rem);
+
+    }
+    75% {
+        transform: translateY(-1rem);
+    }
+    100 %{
+        transform: translateY(0rem);
+
+    }
 }
 
 
@@ -137,10 +205,11 @@ body {
     border-radius: 50%;
 
 
-    width: 40%;
-    height: 55vh;
-    top: 22.5vh;
-    left:30%;
+    width: 40vw;
+    height: 40vw;
+    top: 30%;
+    
+
 }
 
 .inner-one-one {
@@ -148,14 +217,14 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet1 12s linear infinite;
+    animation: planet1 20s linear infinite;
 }
 .inner-one-two {
     position: relative;
     top: 50%;
 
     text-align: center;
-    animation: planet1-2 16s linear infinite;
+    animation: planet1-2 26s linear infinite;
 }
 
 .two {
@@ -174,7 +243,7 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet2 16s linear infinite;
+    animation: planet2 30s linear infinite;
 }
 
 .inner-two-two {
@@ -182,7 +251,7 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet2-1 21s linear infinite;
+    animation: planet2-1 36s linear infinite;
 }
 
 .inner-two-three {
@@ -190,7 +259,7 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet2-2 24s linear infinite;
+    animation: planet2-2 40s linear infinite;
 }
 
 .three {
@@ -210,7 +279,7 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet3 20s linear infinite;
+    animation: planet3 50s linear infinite;
 }
 
 .inner-three-two {
@@ -218,7 +287,7 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet3-1 24s linear infinite;
+    animation: planet3-1 55s linear infinite;
 }
 
 .inner-three-three {
@@ -226,7 +295,7 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet3-1 27s linear infinite;
+    animation: planet3-1 60s linear infinite;
 }
 
 .inner-three-four {
@@ -234,7 +303,7 @@ body {
     top: 50%;
 
     text-align: center;
-    animation: planet3 30s linear infinite;
+    animation: planet3 65s linear infinite;
 }
 
 
@@ -245,6 +314,9 @@ body {
 .borderrad1 {
     border-radius: 1.6rem;
 }
+.blackborder {
+    border: 1px solid black;
+}
 
 
 
@@ -254,4 +326,75 @@ body {
 
 .nav {
     min-height: 3rem;
+    width: 100%;
+    background-color: rgba(251, 249, 249, 0.96);
+}
+
+.underline {
+    &::after {
+        content: "";
+        border-bottom: solid 0.1618rem #1b5da5;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.4s;
+    }
+
+    &:hover {
+        &::after {
+            transform-origin: center;
+            transform: scaleX(1);
+        }
+    }
+
+    @keyframes underline {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
+}
+
+
+
+
+/*-------------------------*/
+/*         backgrounds     */
+/*-------------------------*/
+
+.boxbgdark {
+    background-color: rgba(0, 0, 0, 0.28);
+}
+
+
+
+/*-------------------------*/
+/*         shadows         */
+/*-------------------------*/
+
+
+
+.shadowone {
+    box-shadow: 0.3rem 0.3rem 0.6rem 0px rgba(0,0,0,0.5);
+    border-radius: 0.6rem;
+}
+
+
+/*-------------------------*/
+/*         margins         */
+/*-------------------------*/
+
+.margintop {
+    margin-top: 5rem;
+}
+
+.pad{
+    padding-right: 150px;
+    padding-left: 150px;
 }

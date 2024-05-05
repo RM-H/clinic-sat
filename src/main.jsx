@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Mainlayout  from './Layout/Mainlayout.jsx'
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
-import {Landing} from './pages/index.js'
+import {Landing,Contact} from './pages/index.js'
 
 const router = createBrowserRouter([
     {
@@ -12,6 +12,10 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Landing/>
+            } ,
+            {
+                path:'/contact/',
+                element:<Contact/>
             }
         ]
     },

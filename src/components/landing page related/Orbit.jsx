@@ -5,7 +5,7 @@ import {Typography} from '@mui/material'
 const Orbit = () => {
   return(
       <>
-          <Grid container sx={{backgroundImage:`url("/assets/images/bg.jpg")`  , backgroundSize:'cover' , backgroundRepeat:'no-repeat' , backgroundAttachment:'fixed' , height:'100vh' }}>
+          <Grid container sx={{backgroundImage:`url("/assets/images/bg.svg")`  , backgroundSize:'cover' , backgroundRepeat:'no-repeat' , backgroundAttachment:'fixed' , height:'100vh' }}>
               <Grid xs={2}>
                   1
               </Grid>
@@ -13,11 +13,16 @@ const Orbit = () => {
               <Grid xs={8}>
 
                   <div className='orbit-container'>
-                      <div className='orbit-head borderrad1 '>
-                          <Typography className='yekan' variant='h2' component={'h1'} sx={{textShadow:'-2px 5px 3px #fff'}}>
-                              کلینیک تخصصی آلرژی ستارزاده
+                      <div className='orbit-head '>
+                          <img src="/assets/images/logo-large.svg"  alt=""/>
+                          <Typography className='yekan' variant='h2' component={'h1'} sx={{ lineHeight:'6rem'}}>
+                              آزمایشگاه تخصصی ایمونولوژی
+                              <br/>
+                              تشخیص پزشکی
+                              <br/>
+                              ستارزاده
                           </Typography>
-                          <Typography className='yekan'>
+                          <Typography className='yekan' sx={{mt:3}}>
                               مجهزترین آزمایشگاه تشخیص آلرژی ، درمان انواع آلرژی با بهترین متدهای دنیا
                           </Typography>
 
@@ -47,6 +52,7 @@ const Orbit = () => {
 
                           <div className='inner-two-two'>
                               <Chip className='yekan' sx={{direction:'rtl'}} color='info' label='تست IgE آلرژی ' />
+
                           </div>
 
                           <div className='inner-two-three'>
@@ -69,6 +75,7 @@ const Orbit = () => {
 
                           <div className='inner-three-four'>
                               <Chip className='yekan' color='primary' label='مجهزترین آزمایشگاه تشخیص آلرژی ' />
+
                           </div>
                       </div>
 

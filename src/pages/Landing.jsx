@@ -1,10 +1,10 @@
-import {Orbit} from '../components/index.js'
+import {Orbit , ServiceBox} from '../components/index.js'
 import Grid from '@mui/material/Unstable_Grid2'
 const Landing = () => {
   return(
       <>
 
-          <Grid container>
+          <Grid container sx={{mt:5}}>
               <Grid xs={12}>
                   <Orbit/>
 
@@ -12,9 +12,7 @@ const Landing = () => {
 
 
               <Grid xs={12}>
-                  <div style={{height:'20rem'}}>
-                      asdsad
-                  </div>
+                 <ServiceBox/>
 
               </Grid>
 
