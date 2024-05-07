@@ -13,9 +13,9 @@ import {
     Typography
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
-import {useState } from "react";
+import {useState} from "react";
 import {Menu} from '@mui/icons-material'
-import {Link,useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const Navbar = (props) => {
     const [activePage, setActivePage] = useState(0)
@@ -173,10 +173,10 @@ const Navbar = (props) => {
             </nav>
 
             {/*Responsive Drawer*/}
-            <Box sx={{flexGrow: 1 , direction:'rtl'}}>
+            <Box sx={{flexGrow: 1, direction: 'rtl'}}>
                 <AppBar position="fixed" sx={{
                     '&.MuiAppBar-root': {
-                        backgroundColor:'rgba(255,255,255,0.36)' ,
+                        backgroundColor: 'rgba(255,255,255,0.36)',
                         backdropFilter: 'blur(1rem)'
 
                     }
@@ -193,29 +193,38 @@ const Navbar = (props) => {
                             <Menu/>
                         </IconButton>
 
-                        <Grid container  sx={{width:'100%' }}>
-                            <Grid xs={5} sx={{display:'flex', justifyContent:'end'}}>
-                                <Button  onClick={()=>nav('/')} className='underline yekan clrblack' color="primary">صفحه اصلی</Button>
+                        <Grid container sx={{width: '100%'}}>
+                            <Grid xs={5} sx={{display: 'flex', justifyContent: 'end'}}>
+                                <Button onClick={() => nav('/')} className='underline yekan clrblack' color="primary">صفحه
+                                    اصلی</Button>
 
-                                    <Button onClick={()=>{
+                                <Button onClick={ () => {
+
+                                    setTimeout(()=>{
                                         let el = document.getElementById('services');
-                                        el.scrollIntoView({behavior:"smooth"})
+                                        el.scrollIntoView({behavior: "smooth"})
+                                    },200)
+                                    nav('/');
 
-                                    }}  className='underline yekan clrblack' color="primary">خدمات کلینیک</Button>
 
 
+
+
+                                }} className='underline yekan clrblack' color="primary">خدمات کلینیک</Button>
 
 
                             </Grid>
 
-                            <Grid  xs={2} sx={{display:'flex', justifyContent:'center'}}>
+                            <Grid xs={2} sx={{display: 'flex', justifyContent: 'center'}}>
 
-                                <img src="/assets/images/logo.svg"  alt="logo" style={{ borderRadius:'50%' }} width={50} height={50}/>
+                                <img src="/assets/images/logo.svg" alt="logo" style={{borderRadius: '50%'}} width={50}
+                                     height={50}/>
                             </Grid>
 
-                            <Grid xs={5} sx={{display:'flex', justifyContent:'start'}}>
+                            <Grid xs={5} sx={{display: 'flex', justifyContent: 'start'}}>
                                 <Button className='underline yekan clrblack' color="primary">بلاگ</Button>
-                                <Button onClick={()=>nav('/contact/')} className='underline yekan clrblack' color="primary">تماس با ما</Button>
+                                <Button onClick={() => nav('/contact/')} className='underline yekan clrblack'
+                                        color="primary">درباره ما</Button>
                             </Grid>
 
                         </Grid>

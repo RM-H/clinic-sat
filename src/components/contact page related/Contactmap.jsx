@@ -20,7 +20,7 @@ const Contactmap = () => {
 
 
       <>
-          <Grid className='margintop' xs={12} sx={{minHeight:'20rem'}}>
+          <Grid xs={12} sx={{minHeight:'20rem'}}>
 
               <MapContainer ref={mapRef} className='shadowtwo' center={position} zoom={11.6} scrollWheelZoom={false} style={{height:'100%' , borderRadius:'0.9rem'}}>
                   <TileLayer

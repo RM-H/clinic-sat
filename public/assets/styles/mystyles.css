@@ -39,15 +39,30 @@ body {
 }
 
 .clrthree {
-    background-color: rgb(209 237 251);
+    background-color: #CAF4FF
 }
 
 
 .clrfour {
     background-color: rgba(0, 0, 0, 0.12);
 }
+
+.clrfive {
+    background-color: #FFF9D0 !important;
+}
+
+.clrsix {
+    background-color: rgba(3, 48, 106, 0.38);
+}
+
+.clrfivetext {
+   color: #FFF9D0 !important;
+}
 .clrblack {
-    color: black !important;
+    color: rgb(0, 0, 0) !important;
+}
+.clrseven {
+    background-color: white;
 }
 
 
@@ -75,6 +90,7 @@ body {
 
 
 
+
 }
 
 .orbit-head {
@@ -92,7 +108,7 @@ body {
     justify-items: center;
     justify-content: center;
     align-items: center;
-    top: 30%;
+    top: 20%;
     box-shadow: 0px 0px 18px 1px #1a5ca4;
 
     text-align: center;
@@ -131,18 +147,20 @@ body {
 
 @keyframes planet1 {
     from {
-        transform: rotate(0deg) translateX(14vw) rotate(0deg);
+        transform: rotate(0deg) translateX(30vw) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(14vw) rotate(-360deg);
+        transform: rotate(360deg) translateX(30vw) rotate(-360deg);
     }
+
 }
+
 @keyframes planet1-2 {
     from {
-        transform: rotate(0deg) translateX(-14vw) rotate(0deg);
+        transform: rotate(0deg) translateX(-30vw) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(-14vw) rotate(-360deg);
+        transform: rotate(360deg) translateX(-30vw) rotate(-360deg);
     }
 }
 
@@ -151,26 +169,26 @@ body {
 
 @keyframes planet2 {
     from {
-        transform: rotate(0deg) translateX(20vw) rotate(0deg);
+        transform: rotate(0deg) translateX(30vw) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(20vw) rotate(-360deg);
+        transform: rotate(360deg) translateX(30vw) rotate(-360deg);
     }
 }
 @keyframes planet2-1 {
     from {
-        transform: rotate(0deg) translateX(-20vw) rotate(0deg);
+        transform: rotate(0deg) translateX(-30vw) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(-20vw) rotate(-360deg);
+        transform: rotate(360deg) translateX(-30vw) rotate(-360deg);
     }
 }
 @keyframes planet2-2 {
     from {
-        transform: rotate(0deg) translateX(-20vw) rotate(0deg);
+        transform: rotate(0deg) translateX(-30vw) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(-20vw) rotate(-360deg);
+        transform: rotate(360deg) translateX(-30vw) rotate(-360deg);
     }
 }
 
@@ -181,18 +199,18 @@ body {
 
 @keyframes planet3 {
     from {
-        transform: rotate(0deg) translateY(27vw) rotate(0deg);
+        transform: rotate(0deg) translateY(30vw) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateY(27vw) rotate(-360deg);
+        transform: rotate(360deg) translateY(30vw) rotate(-360deg);
     }
 }
 @keyframes planet3-1 {
     from {
-        transform: rotate(0deg) translateY(-27vw) rotate(0deg);
+        transform: rotate(0deg) translateY(-30vw) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateY(-27vw) rotate(-360deg);
+        transform: rotate(360deg) translateY(-30vw) rotate(-360deg);
     }
 }
 
@@ -201,13 +219,16 @@ body {
 
 .one {
     border:0.4rem dotted rgba(37, 37, 37, 0.3);
-    position: absolute;
+    position: relative;
     border-radius: 50%;
 
 
-    width: 40vw;
-    height: 40vw;
-    top: 30%;
+
+    width: 55vw;
+    height: 55vw;
+   bottom: 70%;
+    margin-left: auto;
+    margin-right: auto;
     
 
 }
@@ -233,10 +254,15 @@ body {
     border-radius: 50%;
 
 
-    width: 60%;
-    height: 75vh;
-    top: 12.5vh;
-    left: 20%;
+
+    width: 50vw;
+    height: 50vw;
+    top: 10%;
+    left: 18vw;
+
+
+    margin-left: auto;
+    margin-right: auto;
 }
 .inner-two-one {
     position: relative;
@@ -360,8 +386,12 @@ body {
         }
     }
 }
-
-
+/*-------------------------*/
+/*         cards           */
+/*-------------------------*/
+.cardanimation > :hover {
+    box-shadow: 0.3rem 0.3rem 0.6rem 0px rgba(0,0,0,0.5);
+}
 
 
 /*-------------------------*/
@@ -370,6 +400,10 @@ body {
 
 .boxbgdark {
     background-color: rgba(0, 0, 0, 0.28);
+}
+.boxbglight {
+    background-color: rgba(253, 253, 253, 0.28);
+    backdrop-filter: blur(0.6rem);
 }
 
 

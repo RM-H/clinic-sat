@@ -17,8 +17,9 @@ export {default as Tips} from './extras/Tooltips.jsx'
 export {default as Orbit} from './landing page related/Orbit.jsx'
 export {default as ServiceBox} from './landing page related/Servicesbox.jsx'
 export {default as ServiceCard} from './landing page related/ServicesCard.jsx'
-
-
+export {default as Landingabout} from './landing page related/LandingAbout.jsx'
+export {default as CommentSlider} from './landing page related/LandingSlider.jsx'
+export {default as BlogsSlider} from './landing page related/LandingBlogSlider.jsx'
 
 
 //------------------------------------------------\\
@@ -26,4 +27,6 @@ export {default as ServiceCard} from './landing page related/ServicesCard.jsx'
 //------------------------------------------------\\
 
 export {default as Contactmap} from './contact page related/Contactmap.jsx'
-export {default as Contactform} from './contact page related/Contactform.jsx'
+export {default as Contacticon} from './contact page related/Contacticons.jsx'
+export {default as ContactText} from './contact page related/ContactText.jsx'
+

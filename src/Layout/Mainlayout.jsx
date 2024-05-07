@@ -6,7 +6,7 @@ const Mainlayout = () => {
         <>
 
 
-        <div className='container'  style={{ minHeight:'100vh'}}>
+        <div className='container '  style={{ minHeight:'100vh'}}>
 
             <Nav/>
             <main>
