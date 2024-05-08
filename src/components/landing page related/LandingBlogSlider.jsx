@@ -8,174 +8,137 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/effect-fade';
 
-import { Navigation, Pagination, Autoplay} from 'swiper/modules';
+import {Navigation, Pagination, Autoplay} from 'swiper/modules';
 
 import Grid from '@mui/material/Unstable_Grid2'
-import {Typography , Button} from '@mui/material'
+import {Typography,Button} from '@mui/material'
+
+import {BlogCard,Spinner} from '../index.js'
+
+
+import {getSplash} from '../../Services/services.js'
 
 const LandingBlogSlider = () => {
-  return(
-      <>
-
-          <Grid container  className='pad ' sx={{py:5 ,backgroundImage:`url("/assets/images/wave.svg")`  , backgroundSize:'cover' , backgroundRepeat:'no-repeat'  }}>
 
 
-              <Grid xs={12}  sx={{display:'flex' , flexDirection:'row' , height:'33%' , alignItems:'center' , mt:8 }}>
+    const [data,setData] = useState(false)
+
+    const getData = async () => {
+        const response = await getSplash()
+        if (response) {
+            setData(response.data.safiran_blogs)
 
 
-                  <img src="/assets/images/knbowledge.png"  alt=""/>
-                  <Typography className='yekan clronetext' variant='h4' component='h4'>
-                      درباره آلرژی بیشتر بدانید ...
-
-                  </Typography>
-
-              </Grid>
-
-              <Swiper
-                  spaceBetween={50}
-                  autoplay={{
-                      delay: 5000,
-                      disableOnInteraction: false,
-                      pauseOnMouseEnter: true
-                  }}
-                  breakpoints={
-                      {
-                          200: {
-                              slidesPerView: 1
-                          },
-                          1024: {
-                              slidesPerView: 1
-                          }
-                      }
-                  }
+        } else {
+            alert('مشکل در ارتباط با سرور')
+        }
+    }
 
 
-                  speed={1618}
-                  loop={true}
-                  navigation={true}
-                  // pagination={{
-                  //
-                  //     bulletActiveClass:'bulletbg',
-                  //
-                  //
-                  //
-                  //
-                  //
-                  // }}
-                  modules={[ Navigation, Pagination, Autoplay]}
-                  style={{height:'100%' , width:'100%' }}
+    useEffect(() => {
 
-              >
+        getData()
+    }, []);
 
-                  <SwiperSlide>
-                      <Grid container sx={{px:5}} >
+    let content
+
+    if (data!==false) {
+        content=
+        data.map((i)=>{
+            return(
+                <>
+
+                <SwiperSlide key={i.id}>
+                    <Grid key={i.id} container sx={{px:4}}>
 
 
-                          <Grid xs={4} sx={{py:3, px:4 }}>
-                              <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 ' style={{padding:'1rem'}}>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='subtitle1' component='p'>
-                                      آقای فلانی
-                                      <img src="/assets/images/person.png" style={{float:'left'}} alt=""/>
+                        <Grid key={i.id} xs={12} sx={{py: 3,}}>
+                            <BlogCard key={i.id} img={i.img} title={i.title} date={i.date_text} id={i.id} text={i.txt}/>
+                        </Grid>
 
 
-                                  </Typography>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='body2' component='q'>
-                                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                                  </Typography>
-
-                              </div>
-                          </Grid>
-
-                          <Grid xs={4} sx={{py:3 , px:4}}>
-                              <div className='width100 yekan clrseven shadowone borderrad1' style={{padding:'1rem'}}>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='subtitle1' component='p'>
-                                      خانوم فلانی
-                                      <img src="/assets/images/person.png" style={{float:'left'}} alt=""/>
-
-                                  </Typography>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='body2' component='q'>
-                                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                                  </Typography>
-
-                              </div>
-                          </Grid>
-                          <Grid xs={4} sx={{py:3 , px:4}}>
-                              <div className='width100 yekan clrseven shadowone borderrad1' style={{padding:'1rem'}}>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='subtitle1' component='p'>
-                                      خانوم فلانی
-                                      <img src="/assets/images/person.png" style={{float:'left'}} alt=""/>
-
-                                  </Typography>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='body2' component='q'>
-                                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                                  </Typography>
-
-                              </div>
-                          </Grid>
-                      </Grid>
-                  </SwiperSlide>
-
-                  <SwiperSlide>
-                      <Grid container sx={{px:5}}>
-
-
-                          <Grid xs={4} sx={{py:3 , px:4}}>
-                              <div className='width100 yekan clrseven shadowone borderrad1' style={{padding:'1rem'}}>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='subtitle1' component='p'>
-                                      آقای فلانی
-                                      <img src="/assets/images/person.png" style={{float:'left'}} alt=""/>
-
-                                  </Typography>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='body2' component='q'>
-                                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                                  </Typography>
-
-                              </div>
-                          </Grid>
-
-                          <Grid xs={4} sx={{py:3 , px:4}}>
-                              <div className='width100 yekan clrseven shadowone borderrad1' style={{padding:'1rem'}}>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='subtitle1' component='p'>
-                                      آقای فلانی
-                                      <img src="/assets/images/person.png" style={{float:'left'}} alt=""/>
-
-                                  </Typography>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='body2' component='q'>
-                                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                                  </Typography>
-
-                              </div>
-                          </Grid>
-                          <Grid xs={4} sx={{py:3 , px:4}}>
-                              <div className='width100 yekan clrseven shadowone borderrad1' style={{padding:'1rem'}}>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='subtitle1' component='p'>
-                                      آقای فلانی
-                                      <img src="/assets/images/person.png" style={{float:'left'}} alt=""/>
-
-                                  </Typography>
-                                  <Typography className='yekan'  sx={{my:2}}  variant='body2' component='q'>
-                                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                                  </Typography>
-
-                              </div>
-                          </Grid>
-                      </Grid>
-
-                  </SwiperSlide>
+                    </Grid>
+                </SwiperSlide>
+                </>
+            )
+        })
+    } else {
+        content = <Spinner/>
+    }
 
 
 
+    return (
+        <>
+
+            <Grid container className='pad ' sx={{
+                py: 6,
+                backgroundImage: `url("/assets/images/wave.svg")`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+            }}>
 
 
+                <Grid xs={12} sx={{display: 'flex', flexDirection: 'row', height: '33%', alignItems: 'center', mt: 8}}>
 
 
-              </Swiper>
+                    <img src="/assets/images/knbowledge.png" alt=""/>
+                    <Typography className='yekan clronetext' variant='h4' component='h4'>
+                        درباره آلرژی بیشتر بدانید ...
 
-          </Grid>
+                    </Typography>
+                    <Button className='yekan' variant="contained" sx={{mr:'auto'}}>مشاهده بیشتر</Button>
+
+                </Grid>
+
+                <Swiper
+                    spaceBetween={50}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    }}
+                    breakpoints={
+                        {
+                            200: {
+                                slidesPerView: 1
+                            },
+                            1024: {
+                                slidesPerView: 3
+                            }
+                        }
+                    }
 
 
-      </>
-  )
+                    speed={1618}
+                    loop={true}
+                    navigation={true}
+                    // pagination={{
+                    //
+                    //     bulletActiveClass:'bulletbg',
+                    //
+                    //
+                    //
+                    //
+                    //
+                    // }}
+                    modules={[Navigation, Pagination, Autoplay]}
+                    style={{height: '100%', width: '100%'}}
+
+                >
+
+                    {
+                        content
+                    }
+
+
+                </Swiper>
+
+            </Grid>
+
+
+        </>
+    )
 }
 
 export default LandingBlogSlider;

@@ -5,6 +5,7 @@
 export {default as Nav} from './Navbar.jsx'
 export {default as Footer} from './Footer.jsx'
 export {default as Tips} from './extras/Tooltips.jsx'
+export {default as Spinner} from './extras/Spinner.jsx'
 
 
 
@@ -20,6 +21,7 @@ export {default as ServiceCard} from './landing page related/ServicesCard.jsx'
 export {default as Landingabout} from './landing page related/LandingAbout.jsx'
 export {default as CommentSlider} from './landing page related/LandingSlider.jsx'
 export {default as BlogsSlider} from './landing page related/LandingBlogSlider.jsx'
+export {default as BlogCard} from './landing page related/BlogSliderCard.jsx'
 
 
 //------------------------------------------------\\

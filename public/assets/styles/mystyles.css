@@ -31,9 +31,11 @@ body {
 .clrone {
     background-color: #1a5ca4 !important;
 }
+
 .clronetext {
     color: #1a5ca4;
 }
+
 .clrtwo {
     background-color: rgb(253 234 121);
 }
@@ -56,15 +58,24 @@ body {
 }
 
 .clrfivetext {
-   color: #FFF9D0 !important;
+    color: #FFF9D0 !important;
 }
+
 .clrblack {
     color: rgb(0, 0, 0) !important;
 }
+
 .clrseven {
     background-color: white;
 }
+.clrwhitetp {
+    background-color: rgba(255, 255, 255, 0.59);
+    backdrop-filter: blur(0.1rem);
+}
 
+.clreight {
+    background-color: #b7f3b5 !important;
+}
 
 
 /*-------------------------*/
@@ -76,19 +87,15 @@ body {
 }
 
 
-
 /*-------------------------*/
 /*         orbit           */
 /*-------------------------*/
 
 .orbit-container {
-   height: 100vh;
+    height: 100vh;
 
     position: relative;
     overflow: hidden;
-
-
-
 
 
 }
@@ -121,7 +128,7 @@ body {
     top: -10%;
 
     z-index: -1;
-    animation:logoanimation 6s linear infinite ;
+    animation: logoanimation 6s linear infinite;
 }
 
 
@@ -136,13 +143,11 @@ body {
     75% {
         transform: translateY(-1rem);
     }
-    100 %{
+    100% {
         transform: translateY(0rem);
 
     }
 }
-
-
 
 
 @keyframes planet1 {
@@ -165,8 +170,6 @@ body {
 }
 
 
-
-
 @keyframes planet2 {
     from {
         transform: rotate(0deg) translateX(30vw) rotate(0deg);
@@ -175,6 +178,7 @@ body {
         transform: rotate(360deg) translateX(30vw) rotate(-360deg);
     }
 }
+
 @keyframes planet2-1 {
     from {
         transform: rotate(0deg) translateX(-30vw) rotate(0deg);
@@ -183,6 +187,7 @@ body {
         transform: rotate(360deg) translateX(-30vw) rotate(-360deg);
     }
 }
+
 @keyframes planet2-2 {
     from {
         transform: rotate(0deg) translateX(-30vw) rotate(0deg);
@@ -193,10 +198,6 @@ body {
 }
 
 
-
-
-
-
 @keyframes planet3 {
     from {
         transform: rotate(0deg) translateY(30vw) rotate(0deg);
@@ -205,6 +206,7 @@ body {
         transform: rotate(360deg) translateY(30vw) rotate(-360deg);
     }
 }
+
 @keyframes planet3-1 {
     from {
         transform: rotate(0deg) translateY(-30vw) rotate(0deg);
@@ -215,21 +217,18 @@ body {
 }
 
 
-
-
 .one {
-    border:0.4rem dotted rgba(37, 37, 37, 0.3);
+    border: 0.4rem dotted rgba(37, 37, 37, 0.3);
     position: relative;
     border-radius: 50%;
 
 
-
     width: 55vw;
     height: 55vw;
-   bottom: 70%;
+    bottom: 70%;
     margin-left: auto;
     margin-right: auto;
-    
+
 
 }
 
@@ -240,6 +239,7 @@ body {
     text-align: center;
     animation: planet1 20s linear infinite;
 }
+
 .inner-one-two {
     position: relative;
     top: 50%;
@@ -249,10 +249,9 @@ body {
 }
 
 .two {
-    border:0.4rem dotted rgba(37, 37, 37, 0.3);
+    border: 0.4rem dotted rgba(37, 37, 37, 0.3);
     position: absolute;
     border-radius: 50%;
-
 
 
     width: 50vw;
@@ -264,6 +263,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .inner-two-one {
     position: relative;
     top: 50%;
@@ -289,7 +289,7 @@ body {
 }
 
 .three {
-    border:0.3rem dotted rgba(37, 37, 37, 0.3);
+    border: 0.3rem dotted rgba(37, 37, 37, 0.3);
     position: absolute;
     border-radius: 50%;
 
@@ -340,10 +340,10 @@ body {
 .borderrad1 {
     border-radius: 1.6rem;
 }
+
 .blackborder {
     border: 1px solid black;
 }
-
 
 
 /*-------------------------*/
@@ -386,11 +386,12 @@ body {
         }
     }
 }
+
 /*-------------------------*/
 /*         cards           */
 /*-------------------------*/
 .cardanimation > :hover {
-    box-shadow: 0.3rem 0.3rem 0.6rem 0px rgba(0,0,0,0.5);
+    box-shadow: 0.3rem 0.3rem 0.6rem 0px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -401,11 +402,15 @@ body {
 .boxbgdark {
     background-color: rgba(0, 0, 0, 0.28);
 }
+.blogbg {
+    background-color: rgba(162, 157, 157, 0.72);
+    backdrop-filter: blur(0.3rem);
+}
+
 .boxbglight {
     background-color: rgba(253, 253, 253, 0.28);
     backdrop-filter: blur(0.6rem);
 }
-
 
 
 /*-------------------------*/
@@ -413,9 +418,8 @@ body {
 /*-------------------------*/
 
 
-
 .shadowone {
-    box-shadow: 0.3rem 0.3rem 0.6rem 0px rgba(0,0,0,0.5);
+    box-shadow: 0.3rem 0.3rem 0.6rem 0px rgba(0, 0, 0, 0.5) !important;
     border-radius: 0.6rem;
 }
 
@@ -425,10 +429,10 @@ body {
 /*-------------------------*/
 
 .margintop {
-    margin-top: 5rem;
+    margin-top: 5rem !important;
 }
 
-.pad{
+.pad {
     padding-right: 150px;
     padding-left: 150px;
 }

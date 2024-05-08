@@ -80,15 +80,13 @@ const LandingSlider = () => {
                                 <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 '
                                      style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
-                                        آقای فلانی
+                                       محمد اکبری :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
 
 
                                     </Typography>
-                                    <Typography className='yekan' sx={{my: 2}} variant='body2' component='q'>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                        برای شرایط فعلی تکنولوژی مورد نیاز
+                                    <Typography color="text.secondary" className='yekan' sx={{my: 2 , fontStyle:'italic'}} variant='caption' component='q'>
+                                        من برای تست آلرژی IgE توی شهر ارومیه هیچ آزمایشگاه تخصصی ای رو نتونستم پیدا کنم ولی کلینیک تخصصی ستارزاده تو این شهر مثل معجزه میمونه. تست آلرژی من رو انجام دادن و جواب رو در سریع ترین زمان به دستم رسوندن.
                                     </Typography>
 
                                 </div>
@@ -97,14 +95,12 @@ const LandingSlider = () => {
                             <Grid xs={4} sx={{py: 3, px: 4}}>
                                 <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
-                                        خانوم فلانی
+                                        سایناز جعفری :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
 
                                     </Typography>
-                                    <Typography className='yekan' sx={{my: 2}} variant='body2' component='q'>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                        برای شرایط فعلی تکنولوژی مورد نیاز
+                                    <Typography color="text.secondary" className='yekan' sx={{my: 2 , fontStyle:'italic'}} variant='caption' component='q'>
+                                        من از اشنویه اومدم کلینیک تخصصی ستارزاده با تکمیل تمامی شاخه های مورد نیاز در حوزه خودش مثل آزمایشگاه، دندانپزشکی، داروخانه و… مراجعین رو از دغدغه این موارد دور میکنه و من دون اینکه با مشکل ترافیک شهری برخورد کنم تونستم خیلی راحت به آزمایشگاه، داروخانه و… دسترسی پیدا کنم.
                                     </Typography>
 
                                 </div>
@@ -112,14 +108,12 @@ const LandingSlider = () => {
                             <Grid xs={4} sx={{py: 3, px: 4}}>
                                 <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
-                                        خانوم فلانی
+                                        میترا رضایی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
 
                                     </Typography>
-                                    <Typography className='yekan' sx={{my: 2}} variant='body2' component='q'>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                        برای شرایط فعلی تکنولوژی مورد نیاز
+                                    <Typography color="text.secondary" className='yekan' sx={{my: 2 , fontStyle:'italic'}} variant='caption' component='q'>
+                                        آزمایش Patch یکی از حساس ترین آزمایش هاست که اکثر آزمایشگاه ها نتایج درستی رو به مراجعین ارائه نمیدن چند بار به کلینیک های مختلف توی ارومیه و تبریز رفتم ولی همیشه جوابای غلطی میگرفتم ولی این کلینیک با تجهیزاتی که داره خیلی دقیق میتونه دلیل حساسیت بیمار رو با آزمایش های مختلف بسنجه.
                                     </Typography>
 
                                 </div>
@@ -136,15 +130,13 @@ const LandingSlider = () => {
                                 <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 '
                                      style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
-                                        آقای فلانی
+                                       پیمان عظیمی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
 
 
                                     </Typography>
-                                    <Typography className='yekan' sx={{my: 2}} variant='body2' component='q'>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                        برای شرایط فعلی تکنولوژی مورد نیاز
+                                    <Typography color="text.secondary" className='yekan' sx={{my: 2 , fontStyle:'italic'}} variant='caption' component='q'>
+                                        مادر من به لبنیات حساسیت داشت کلینیک ستارزاده تونست این مورد رو تشخیص بده عالی بودن واقعا الان دو ماهه از مادرم از داروهایی که تجویز کردن استفاده میکنن خیلی جواب گرفتیم. خسته نباشید.
                                     </Typography>
 
                                 </div>
@@ -153,14 +145,12 @@ const LandingSlider = () => {
                             <Grid xs={4} sx={{py: 3, px: 4}}>
                                 <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
-                                        خانوم فلانی
+                                     سارا رحیم زاده :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
 
                                     </Typography>
-                                    <Typography className='yekan' sx={{my: 2}} variant='body2' component='q'>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                        برای شرایط فعلی تکنولوژی مورد نیاز
+                                    <Typography color="text.secondary" className='yekan' sx={{my: 2 , fontStyle:'italic'}} variant='caption' component='q'>
+                                        من برای اگزما به این کلینیک مراجعه کردم کادر درمانش رفتار حرفه ای داشتن، محیط خیلی تمیز بود و بدون معطلی و انتظار تونستم ازمایش خونم رو بدم.من خیلی راضی بودم به بقیه هم توصیه میکنم.
                                     </Typography>
 
                                 </div>
@@ -168,14 +158,12 @@ const LandingSlider = () => {
                             <Grid xs={4} sx={{py: 3, px: 4}}>
                                 <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
-                                        خانوم فلانی
+                                       مبین خدایی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
 
                                     </Typography>
-                                    <Typography className='yekan' sx={{my: 2}} variant='body2' component='q'>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                        گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                        برای شرایط فعلی تکنولوژی مورد نیاز
+                                    <Typography color="text.secondary" className='yekan' sx={{my: 2 , fontStyle:'italic'}} variant='caption' component='q'>
+                                        پزشکانی که در این کلینیک هستند خیلی تو کارشون حرفه ای هستن و رفتارشونم حرفه ایه. نتایج آزمایشات برخلاف آزمایشگاه های آلرژی دیگه که رفتم دقیق هست.
                                     </Typography>
 
                                 </div>
