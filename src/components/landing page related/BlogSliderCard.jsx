@@ -8,7 +8,7 @@ import {
     Chip,
     Switch,
     FormLabel,
-    FormControl, FormGroup, FormControlLabel, Tooltip
+    FormControl, FormGroup, FormControlLabel, Tooltip, Divider
 } from "@mui/material";
 import {baseurl} from '../../Services/services.js'
 import {Link} from 'react-router-dom'
@@ -58,15 +58,16 @@ const BlogSliderCard = ({date, id, img, title, text}) => {
                 <CardMedia
                     sx={{height: '23rem', filter: show === true ? 'none' : 'blur(0.4rem)'}}
                     image={`${baseurl}/${img}`}
-                    title="green iguana"
+                    title={title}
                 />
                 <CardContent>
-                    <Typography gutterBottom className='yekan' variant="h5" component="div">
+                    <Typography gutterBottom className='yekan' variant="h6" component="div" sx={{textAlign:'justify'}}>
                         {title}
 
                     </Typography>
+                    <Divider/>
 
-                    <Typography variant="caption" color="text.secondary" component='div' className='yekan'
+                    <Typography variant="caption" color="text.secondary" component='div' className='yekan-regular'
                                 dangerouslySetInnerHTML={{__html: txt(text)}}/>
 
 

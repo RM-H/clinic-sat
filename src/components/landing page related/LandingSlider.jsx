@@ -80,13 +80,14 @@ const LandingSlider = () => {
                                 <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 '
                                      style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
-                                       محمد اکبری :
+                                       مصطفی کهربا :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
 
 
                                     </Typography>
                                     <Typography color="text.secondary" className='yekan' sx={{my: 2 , fontStyle:'italic'}} variant='caption' component='q'>
                                         من برای تست آلرژی IgE توی شهر ارومیه هیچ آزمایشگاه تخصصی ای رو نتونستم پیدا کنم ولی کلینیک تخصصی ستارزاده تو این شهر مثل معجزه میمونه. تست آلرژی من رو انجام دادن و جواب رو در سریع ترین زمان به دستم رسوندن.
+                                        دکتر فقط خودت. بقیه اداتو در میارن
                                     </Typography>
 
                                 </div>

@@ -1,11 +1,36 @@
 import Grid from '@mui/material/Unstable_Grid2'
-import {Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText, Typography} from '@mui/material'
+import {
+    Avatar,
+    Divider,
+    List,
+    ListItem,
+    ListItemAvatar,
+    ListItemText,
+    Typography,
+    Paper,
+    FormControl, FormGroup, Tooltip, FormControlLabel, Switch
+} from '@mui/material'
 import {getBlog,getSplash,baseurl} from '../Services/services.js'
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Spinner} from '../components/index.js'
+import {Link} from 'react-router-dom'
+import {Visibility, VisibilityOff} from "@mui/icons-material";
 
 const SingleBlog = () => {
+    // to controll the show of sensitive images
+    const [show, setShow] = useState(false)
+
+
+    // shorten the text
+    let txt = function stripTags(text) {
+        const stripped = text.replace(/<[^>]+>/g, '');
+        if (stripped.length <= 60) {
+            return stripped;
+        }
+        return text.substr(0, 60) + '...';
+    }
+
     let {blogID} = useParams()
 
     const [data, setData] = useState(false)
@@ -21,6 +46,8 @@ const SingleBlog = () => {
         if (res) {
 
             setData(res.data)
+
+
             console.log(res.data)
         }
     }
@@ -40,32 +67,100 @@ const SingleBlog = () => {
     }
 
     useEffect(() => {
-        getdata().then()
+        getdata().then(()=>{
+            let imgs = document.getElementById(blogID)
+            imgs.style.filter='blur(0.3rem)'
+        })
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
         getSplashinfo().then()
+
     }, []);
+
+    // useEffect(() => {
+    //     let imgs = document.getElementById(blogID)
+    //
+    //     if (imgs){
+    //         if (show===false){
+    //             imgs.style.filter='blur(0.3rem)'
+    //         } else {
+    //             imgs.style.filter='none'
+    //         }
+    //
+    //     }
+    // }, [show]);
+
+
 
 
     let content
     if (data !== false ) {
+        let imgs = document.getElementById(blogID)
+
+        if (imgs){
+            if (show===false){
+                imgs.style.filter='blur(0.3rem)'
+            } else {
+                imgs.style.filter='none'
+            }
+
+        }
+
+
+
         content =
 
 
-            <Grid container>
+            <Grid container sx={{height:'100%' , flexDirection:'column' , flexWrap:'nowrap'}}>
 
 
                 <Grid xs={12}>
-                    <Typography component='h1'>
+                    <Typography component='h1' className='yekan'>
                         {data.blog.title}
 
                     </Typography>
+                    <Typography variant='caption' className='yekan-regular'>
+                        {data.blog.date_text}
+                    </Typography>
+
+                    <FormControl className='clrwhitetp' component="fieldset" sx={{float: 'left', zIndex: 1000}}>
+
+                        <FormGroup aria-label="position" row>
+                            <Tooltip placement='top'  title={<span className='yekan'>
+                                ممکن است حاوی تصاویر ناخوشایند باشد.
+
+                                </span>}>
+                                <FormControlLabel
+
+                                    sx={{ml: 0, pr: 3}}
+                                    control={<Switch onChange={() => setShow((p) => !p)} color="info"/>}
+                                    label={
+
+                                        <span style={{display: 'flex', alignItems: 'center', fontSize: '0.6rem'}}>
+                              {
+                                  show === true ? <Visibility/> : <VisibilityOff/>
+                              }
+
+                      </span>
+
+                                    }
+                                    labelPlacement="start"
+                                />
+                            </Tooltip>
+
+                        </FormGroup>
+                    </FormControl>
                 </Grid>
 
-                <Grid xs={12}>
-                    <Typography dangerouslySetInnerHTML={{__html:data.blog.txt}} component='div'/>
+                <Grid xs={12} sx={{height:'100%' , p:3}}>
+                    <Paper elevation={9} className='width100 ' sx={{height:'100%' , p:3 , textAlign:'center'}}>
+                        <img src={`${baseurl}/${data.blog.img}`} id={data.blog.id}  alt={data.blog.title}/>
+
+                        <Typography dangerouslySetInnerHTML={{__html:data.blog.txt}} className='yekan-regular' variant='body2' component='article' sx={{textAlign:'justify' , my:3}}/>
+                    </Paper>
+
                 </Grid>
 
             </Grid>
@@ -85,7 +180,14 @@ const SingleBlog = () => {
 
                 <>
 
-                    <ListItem alignItems="flex-start">
+
+
+                    <Link to={`/blogs/${i.id}`}  style={{color:'inherit' , textDecoration:'none'}}>
+
+
+                    <ListItem alignItems="flex-start" onClick={()=>{
+                       window.location.reload()
+                    }}>
                         <ListItemAvatar>
                             <Avatar alt="P" src={`${baseurl}/${i.img}`} />
                         </ListItemAvatar>
@@ -99,17 +201,20 @@ const SingleBlog = () => {
                                 <>
                                     <Typography
                                         sx={{ display: 'inline' }}
-                                        component="span"
-                                        variant="body2"
-                                        color="text.primary"
+                                        className='yekan'
+                                        component="div"
+                                        variant="caption"
+                                        color="text.secondary"
+                                        dangerouslySetInnerHTML={{__html:txt(i.txt)}}
                                     >
-                                        {i.title}
+
                                     </Typography>
 
                                 </>
                             }
                         />
                     </ListItem>
+                    </Link>
                     <Divider variant="inset" component="li" />
 
                 </>
@@ -125,7 +230,7 @@ const SingleBlog = () => {
         <>
             <Grid container className='pad' sx={{
                 minHeight: '100vh',
-                pt: 9,
+                py: 9,
                 // backgroundImage: `url("https://img.freepik.com/free-vector/creative-pencil-design-illustration-concept-creative-process_460848-14810.jpg?w=1060&t=st=1715164146~exp=1715164746~hmac=753f14f0452aae7f3a12286a0b1b299bb425a79fbc25885e8105556a45fc3603")`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',

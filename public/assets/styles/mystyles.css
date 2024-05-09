@@ -12,6 +12,11 @@ body {
     src: url("../fonts/YekanBakhFaNum-Bold.woff2");
 }
 
+@font-face {
+    font-family: 'yekan-reg';
+    src: url("../fonts/YekanBakhFaNum-Regular.woff2");
+}
+
 
 .container {
     width: 1900px;
@@ -85,7 +90,9 @@ body {
 .yekan {
     font-family: yekan !important;
 }
-
+.yekan-regular {
+    font-family: yekan-reg !important;
+}
 
 /*-------------------------*/
 /*         orbit           */
@@ -145,6 +152,23 @@ body {
     }
     100% {
         transform: translateY(0rem);
+
+    }
+}
+
+@keyframes logoanimationx {
+    25% {
+        transform: translateX(1rem);
+    }
+    50% {
+        transform: translateX(0rem);
+
+    }
+    75% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        transform: translateX(0rem);
 
     }
 }
@@ -218,13 +242,14 @@ body {
 
 
 .one {
-    border: 0.4rem dotted rgba(37, 37, 37, 0.3);
+
     position: relative;
-    border-radius: 50%;
 
 
-    width: 55vw;
-    height: 55vw;
+
+
+    width: 65vw;
+    height: 100vh;
     bottom: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -233,103 +258,144 @@ body {
 }
 
 .inner-one-one {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 10%;
+    right:15%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet1 20s linear infinite;
+    animation: logoanimationx 5s linear infinite;
 }
 
 .inner-one-two {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 30%;
+    right:9%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet1-2 26s linear infinite;
+    animation: logoanimation 5s linear infinite;
 }
 
-.two {
-    border: 0.4rem dotted rgba(37, 37, 37, 0.3);
-    position: absolute;
-    border-radius: 50%;
-
-
-    width: 50vw;
-    height: 50vw;
-    top: 10%;
-    left: 18vw;
-
-
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .inner-two-one {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 75%;
+    right:75%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet2 30s linear infinite;
+    animation: logoanimation 4s linear infinite;
 }
 
 .inner-two-two {
-    position: relative;
+    position: absolute;
     top: 50%;
+    right:9%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet2-1 36s linear infinite;
+    animation: logoanimationx 5s linear infinite;
 }
 
 .inner-two-three {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 73%;
+    right:9%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet2-2 40s linear infinite;
+    animation: logoanimation 5s linear infinite;
 }
 
-.three {
-    border: 0.3rem dotted rgba(37, 37, 37, 0.3);
-    position: absolute;
-    border-radius: 50%;
 
-
-    width: 80%;
-    height: 95vh;
-    top: 2.5vh;
-    left: 10%;
-}
 
 .inner-three-one {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 55%;
+    right:80%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet3 50s linear infinite;
+    /*animation: planet3 50s linear infinite;*/
 }
 
 .inner-three-two {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 35%;
+    right:80%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet3-1 55s linear infinite;
+    /*animation: planet3-1 55s linear infinite;*/
 }
 
-.inner-three-three {
-    position: relative;
-    top: 50%;
 
-    text-align: center;
-    animation: planet3-1 60s linear infinite;
-}
 
 .inner-three-four {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 10%;
+    right:70%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bab6b6;
+
+    backdrop-filter: blur(0.3rem);
+    padding:0.6rem;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
-    animation: planet3 65s linear infinite;
+    /*animation: planet3 65s linear infinite;*/
 }
 
 

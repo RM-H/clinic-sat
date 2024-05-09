@@ -14,7 +14,7 @@ const Orbit = () => {
 
                   <div className='orbit-container'>
                       <div className='orbit-head '>
-                          <img src="/assets/images/logo-large.svg"  alt=""/>
+                          <img src="/assets/images/logo-large.svg" draggable={false} alt=""/>
                           <Typography className='yekan' variant='h2' component={'h1'} sx={{ lineHeight:'6rem'}}>
                               آزمایشگاه تخصصی ایمونولوژی
                               <br/>
@@ -34,40 +34,46 @@ const Orbit = () => {
 
 
 
-                          <div className='inner-one-one'>
+                          <div className='inner-one-one shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/clinic.png" width={64} height={64} alt=""/>
                              <Chip className='yekan' color='primary' label='کلینیک تخصیی آلرژی' />
                           </div>
 
-                          <div className='inner-one-two'>
+                          <div className='inner-one-two shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/pathology.png" width={64} height={64} alt=""/>
                               <Chip className='yekan' color='secondary' label='آزمایشگاه تخصصی آلرژی' />
                           </div>
 
-                          <div className='inner-two-one'>
+                          <div className='inner-two-one shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/doctor.png" width={64} height={64} alt=""/>
                               <Chip className='yekan' color='error' label='پزشکان مجرب' />
                           </div>
 
-                          <div className='inner-two-two'>
+                          <div className='inner-two-two shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/test.png" width={64} height={64} alt=""/>
                               <Chip className='yekan' sx={{direction:'rtl'}} color='info' label='تست IgE آلرژی ' />
 
                           </div>
 
-                          <div className='inner-two-three'>
+                          <div className='inner-two-three shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/+.png" width={64} height={64} alt=""/>
                               <Chip className='yekan' color='success' label='درمان با بهترین متدهای دنیا ' />
                           </div>
 
-                          <div className='inner-three-one'>
+                          <div className='inner-three-one shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/test.png" width={64} height={64} alt=""/>
                               <Chip className='yekan' color='success' label='تست Patch آلرژی ' />
                           </div>
 
-                          <div className='inner-three-two'>
+                          <div className='inner-three-two shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/allergy.png" width={64} height={64} alt=""/>
                               <Chip className='yekan' color='warning' label='ارائه انواع خدمات آلرژی' />
                           </div>
 
-                          <div className='inner-three-three'>
-                              <Chip className='yekan' color='error' label='آزمایشگاه شبانه روزی آلرژی' />
-                          </div>
 
-                          <div className='inner-three-four'>
+
+                          <div className='inner-three-four shadowone'>
+                              <img style={{marginBottom:'0.3rem'}} src="/assets/images/pathology2.png" width={64} height={64} alt=""/>
                               <Chip className='yekan' color='primary' label='مجهزترین آزمایشگاه تشخیص آلرژی ' />
 
 
@@ -76,39 +82,7 @@ const Orbit = () => {
 
                       </div>
 
-                      {/*<div className='two'>*/}
-                      {/*    <div className='inner-two-one'>*/}
-                      {/*        <Chip className='yekan' color='error' label='پزشکان مجرب' />*/}
-                      {/*    </div>*/}
 
-                      {/*    <div className='inner-two-two'>*/}
-                      {/*        <Chip className='yekan' sx={{direction:'rtl'}} color='info' label='تست IgE آلرژی ' />*/}
-
-                      {/*    </div>*/}
-
-                      {/*    <div className='inner-two-three'>*/}
-                      {/*        <Chip className='yekan' color='success' label='درمان با بهترین متدهای دنیا ' />*/}
-                      {/*    </div>*/}
-                      {/*</div>*/}
-
-                      {/*<div className='three'>*/}
-                      {/*    <div className='inner-three-one'>*/}
-                      {/*        <Chip className='yekan' color='success' label='تست Patch آلرژی ' />*/}
-                      {/*    </div>*/}
-
-                      {/*    <div className='inner-three-two'>*/}
-                      {/*        <Chip className='yekan' color='warning' label='ارائه انواع خدمات آلرژی' />*/}
-                      {/*    </div>*/}
-
-                      {/*    <div className='inner-three-three'>*/}
-                      {/*        <Chip className='yekan' color='error' label='آزمایشگاه شبانه روزی آلرژی' />*/}
-                      {/*    </div>*/}
-
-                      {/*    <div className='inner-three-four'>*/}
-                      {/*        <Chip className='yekan' color='primary' label='مجهزترین آزمایشگاه تشخیص آلرژی ' />*/}
-
-                      {/*    </div>*/}
-                      {/*</div>*/}
 
 
 

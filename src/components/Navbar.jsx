@@ -222,7 +222,7 @@ const Navbar = (props) => {
                             </Grid>
 
                             <Grid xs={5} sx={{display: 'flex', justifyContent: 'start'}}>
-                                <Button className='underline yekan clrblack' color="primary">بلاگ</Button>
+                                <Button className='underline yekan clrblack'onClick={() => nav('/blogs/')} color="primary">بلاگ</Button>
                                 <Button onClick={() => nav('/contact/')} className='underline yekan clrblack'
                                         color="primary">درباره ما</Button>
                             </Grid>
