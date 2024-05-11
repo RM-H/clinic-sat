@@ -57,8 +57,8 @@ const SingleBlog = () => {
     const getSplashinfo = async () => {
         const response = await getSplash()
         if (response) {
-            setSplash(response.data.safiran_blogs)
-            console.log(response.data.safiran_blogs)
+            setSplash(response.data.blogs)
+            console.log(response.data)
 
 
         } else {
@@ -155,7 +155,7 @@ const SingleBlog = () => {
                 </Grid>
 
                 <Grid xs={12} sx={{height:'100%' , p:3}}>
-                    <Paper elevation={9} className='width100 ' sx={{height:'100%' , p:3 , textAlign:'center'}}>
+                    <Paper elevation={9} className='width100 ' sx={{height:'100%' ,p:2 , textAlign:'center'}}>
                         <img src={`${baseurl}/${data.blog.img}`} id={data.blog.id}  alt={data.blog.title}/>
 
                         <Typography dangerouslySetInnerHTML={{__html:data.blog.txt}} className='yekan-regular' variant='body2' component='article' sx={{textAlign:'justify' , my:3}}/>
@@ -182,11 +182,12 @@ const SingleBlog = () => {
 
 
 
-                    <Link to={`/blogs/${i.id}`}  style={{color:'inherit' , textDecoration:'none'}}>
+                    <Link key={i.id} to={`/blogs/${i.id}`}  style={{color:'inherit' , textDecoration:'none'}}>
 
 
                     <ListItem alignItems="flex-start" onClick={()=>{
-                       window.location.reload()
+                        setData(false);
+                       getdata().then();
                     }}>
                         <ListItemAvatar>
                             <Avatar alt="P" src={`${baseurl}/${i.img}`} />
@@ -236,12 +237,12 @@ const SingleBlog = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundAttachment: 'fixed'
             }}>
-                <Grid xs={9} sx={{p: 4, overflow: 'auto'}}>
+                <Grid xs={12} md={12} sx={{p: 4, overflow: 'auto'}}>
                     {
                         content
                     }
                 </Grid>
-                <Grid xs={3}  sx={{
+                <Grid xs={12} md={3}  sx={{
                     position: 'sticky', top: '20vh',
                     height: ' 100%'
                 }}>

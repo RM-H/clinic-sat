@@ -4,7 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2'
 const ServicesCard = ({img,title,desc}) => {
     return (
 
-        <Grid xs={4} className='cardanimation'>
+        <Grid xs={12} sm={4} className='cardanimation'>
             <Card className='clrfive ' sx={{ width: '100%' , borderRadius: 9  }}>
                 <CardMedia
                     sx={{ height: '29rem' , backgroundSize:'cover' }}

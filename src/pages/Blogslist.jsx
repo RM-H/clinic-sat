@@ -46,7 +46,7 @@ const blogslist = () => {
         if (data.items.length > 0) {
 
             content = data.items.map((item) => (
-                <Grid xs={4} key={item.id}>
+                <Grid xs={12} md={4} key={item.id}>
                     <BlogCard key={item.id} id={item.id} text={item.txt} img={item.img} title={item.title} date={item.date_text} />
                 </Grid>
 

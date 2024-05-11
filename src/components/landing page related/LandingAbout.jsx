@@ -5,15 +5,15 @@ import {Typography} from '@mui/material'
 const LandingAbout = () => {
   return(
       <>
-          <Grid container className='pad ' sx={{py:6}}>
-              <Grid xs={5}>
-                  <img src="https://decar.savisnet.ir/img/features/about_img.png" alt=""/>
+          <Grid container  className='pad ' sx={{py:6}}>
+              <Grid xs={12} md={5}>
+                  <img src="https://decar.savisnet.ir/img/features/about_img.png" alt="" style={{maxWidth:'100%'}}/>
 
               </Grid>
 
 
 
-              <Grid xs={7} sx={{display:'flex' , flexDirection:'column' , justifyContent:'center'}}>
+              <Grid xs={12} md={7} sx={{display:'flex' , flexDirection:'column' , justifyContent:'center' , p:3}}>
                   <Typography className='yekan clronetext' variant='h6' component='p'>
                       درباره ما
                   </Typography>

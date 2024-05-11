@@ -11,9 +11,9 @@ import 'swiper/css/effect-fade';
 import {Navigation, Pagination, Autoplay} from 'swiper/modules';
 
 import Grid from '@mui/material/Unstable_Grid2'
-import {Typography,Button} from '@mui/material'
+import {Typography, Button} from '@mui/material'
 
-import {BlogCard,Spinner} from '../index.js'
+import {BlogCard, Spinner} from '../index.js'
 
 
 import {getSplash} from '../../Services/services.js'
@@ -21,12 +21,12 @@ import {getSplash} from '../../Services/services.js'
 const LandingBlogSlider = () => {
 
 
-    const [data,setData] = useState(false)
+    const [data, setData] = useState(false)
 
     const getData = async () => {
         const response = await getSplash()
         if (response) {
-            setData(response.data.safiran_blogs)
+            setData(response.data.blogs)
 
 
         } else {
@@ -42,30 +42,30 @@ const LandingBlogSlider = () => {
 
     let content
 
-    if (data!==false) {
-        content=
-        data.map((i)=>{
-            return(
-                <>
+    if (data !== false) {
+        content =
+            data.map((i) => {
+                return (
+                    <>
 
-                <SwiperSlide key={i.id}>
-                    <Grid key={i.id} container sx={{px:4}}>
-
-
-                        <Grid key={i.id} xs={12} sx={{py: 3,}}>
-                            <BlogCard key={i.id} img={i.img} title={i.title} date={i.date_text} id={i.id} text={i.txt}/>
-                        </Grid>
+                        <SwiperSlide key={i.id}>
+                            <Grid key={i.id} container sx={{px: 4}}>
 
 
-                    </Grid>
-                </SwiperSlide>
-                </>
-            )
-        })
+                                <Grid key={i.id} xs={12} sx={{py: 3,}}>
+                                    <BlogCard key={i.id} img={i.img} title={i.title} date={i.date_text} id={i.id}
+                                              text={i.txt}/>
+                                </Grid>
+
+
+                            </Grid>
+                        </SwiperSlide>
+                    </>
+                )
+            })
     } else {
         content = <Spinner/>
     }
-
 
 
     return (
@@ -87,7 +87,7 @@ const LandingBlogSlider = () => {
                         درباره آلرژی بیشتر بدانید ...
 
                     </Typography>
-                    <Button className='yekan' variant="contained" sx={{mr:'auto'}}>مشاهده بیشتر</Button>
+                    <Button className='yekan' variant="contained" sx={{mr: 'auto'}}>مشاهده بیشتر</Button>
 
                 </Grid>
 
@@ -103,6 +103,10 @@ const LandingBlogSlider = () => {
                             200: {
                                 slidesPerView: 1
                             },
+                            900: {
+                                slidesPerView: 2
+                            },
+
                             1024: {
                                 slidesPerView: 3
                             }

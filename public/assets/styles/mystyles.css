@@ -73,6 +73,7 @@ body {
 .clrseven {
     background-color: white;
 }
+
 .clrwhitetp {
     background-color: rgba(255, 255, 255, 0.59);
     backdrop-filter: blur(0.1rem);
@@ -90,6 +91,7 @@ body {
 .yekan {
     font-family: yekan !important;
 }
+
 .yekan-regular {
     font-family: yekan-reg !important;
 }
@@ -132,10 +134,11 @@ body {
 .orbit-head img {
     width: 9rem;
     position: absolute;
-    top: -10%;
+    top: -15%;
+    right: 15rem;
 
     z-index: -1;
-    animation: logoanimation 6s linear infinite;
+    /*animation: logoanimation 6s linear infinite;*/
 }
 
 
@@ -246,8 +249,6 @@ body {
     position: relative;
 
 
-
-
     width: 65vw;
     height: 100vh;
     bottom: 70%;
@@ -260,13 +261,13 @@ body {
 .inner-one-one {
     position: absolute;
     top: 10%;
-    right:15%;
+    right: 15%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
@@ -277,13 +278,13 @@ body {
 .inner-one-two {
     position: absolute;
     top: 30%;
-    right:9%;
+    right: 9%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
@@ -295,13 +296,13 @@ body {
 .inner-two-one {
     position: absolute;
     top: 75%;
-    right:75%;
+    right: 75%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
@@ -312,13 +313,13 @@ body {
 .inner-two-two {
     position: absolute;
     top: 50%;
-    right:9%;
+    right: 9%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
@@ -329,13 +330,13 @@ body {
 .inner-two-three {
     position: absolute;
     top: 73%;
-    right:9%;
+    right: 9%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
@@ -344,58 +345,56 @@ body {
 }
 
 
-
 .inner-three-one {
     position: absolute;
     top: 55%;
-    right:80%;
+    right: 80%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
     text-align: center;
-    /*animation: planet3 50s linear infinite;*/
+    animation: logoanimationx 5s linear infinite;
 }
 
 .inner-three-two {
     position: absolute;
     top: 35%;
-    right:80%;
+    right: 80%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
     text-align: center;
-    /*animation: planet3-1 55s linear infinite;*/
+    animation: logoanimation 5s linear infinite;
 }
-
 
 
 .inner-three-four {
     position: absolute;
     top: 10%;
-    right:70%;
+    right: 70%;
     display: flex;
     flex-direction: column;
     border: 1px solid #bab6b6;
 
     backdrop-filter: blur(0.3rem);
-    padding:0.6rem;
+    padding: 0.6rem;
     justify-content: center;
     align-items: center;
 
     text-align: center;
-    /*animation: planet3 65s linear infinite;*/
+    animation: logoanimationx 5s linear infinite;
 }
 
 
@@ -468,6 +467,7 @@ body {
 .boxbgdark {
     background-color: rgba(0, 0, 0, 0.28);
 }
+
 .blogbg {
     background-color: rgba(162, 157, 157, 0.72);
     backdrop-filter: blur(0.3rem);
@@ -502,3 +502,109 @@ body {
     padding-right: 150px;
     padding-left: 150px;
 }
+
+
+/*-------------------------*/
+/*         responsive      */
+/*-------------------------*/
+
+
+/*mobile*/
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .orbit-head {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.12);
+        width: 100vw;
+        height: 100vw;
+        padding: 0;
+        z-index: 1000;
+        backdrop-filter: blur(0.1rem);
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        top: 18%;
+        box-shadow: 0px 0px 18px 1px #1a5ca4;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    .orbit-head img {
+        width: 9rem;
+        position: absolute;
+        top: -30%;
+        right: 7rem;
+
+        z-index: -1;
+        /*animation: logoanimation 6s linear infinite;*/
+    }
+
+    .one {
+        display: none;
+    }
+
+    .pad {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+/*tablets*/
+@media only screen and (min-width: 600px) and (max-width:1200px) {
+    .container {
+        width: 100vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .orbit-head {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.12);
+        width: 100vw;
+        height: 100vw;
+        padding: 0;
+        z-index: 1000;
+        backdrop-filter: blur(0.1rem);
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        top: 5%;
+        box-shadow: 0px 0px 18px 1px #1a5ca4;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    .orbit-head img {
+        width: 9rem;
+        position: absolute;
+        top: 10%;
+        right: 20rem;
+
+        z-index: -1;
+        /*animation: logoanimation 6s linear infinite;*/
+    }
+
+    .one {
+        display: none;
+    }
+
+    .pad {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+/*@media only screen and (min-width: 768px) and (max-width: 959px) {*/
+/*    */
+/*}*/

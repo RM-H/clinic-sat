@@ -1,7 +1,7 @@
 
 import axios from "axios"; axios
-export const url = 'https://api.bilitim.net/api/v1'
-export const baseurl = "https://api.bilitim.net"
+export const url = 'https://clinic.safirannoavari.com/api/v1'
+export const baseurl = "https://clinic.safirannoavari.com"
 
 export const getSplash = ( ) => {
     return axios.get(`${url}/splash`)

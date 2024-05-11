@@ -8,7 +8,7 @@ const Footer = () => {
       <>
           <Grid container className='clrthree pad' component={'footer'} sx={{minHeight:'15rem' , pt:4  }}>
 
-              <Grid xs={4} sx={{p:2}}>
+              <Grid xs={12} md={4} sx={{p:2}}>
                   <Typography className='yekan clronetext' component='h4' variant='subtitle1'>
                       آزمایشگاه تخصصی ایمونولوژی و تشخیص پزشکی ستار زاده
                   </Typography>
@@ -20,7 +20,7 @@ const Footer = () => {
 
 
 
-              <Grid xs={3} sx={{p:2}}>
+              <Grid xs={12} md={3} sx={{p:2}}>
 
                   <Typography className='yekan clronetext' component='h4' variant='subtitle1'>
                      ارتباط با ما
@@ -55,7 +55,7 @@ const Footer = () => {
               </Grid>
 
 
-              <Grid xs={3} sx={{p:2}}>
+              <Grid xs={12} md={3} sx={{p:2}}>
 
                   <Typography className='yekan clronetext' component='h4' variant='subtitle1'>
                       مجوز ها
@@ -63,7 +63,7 @@ const Footer = () => {
               </Grid>
 
 
-              <Grid xs={2} sx={{p:2}}>
+              <Grid xs={12} md={2} sx={{p:2}}>
 
                   <Typography className='yekan clronetext' component='h4' variant='subtitle1'>
                       لینک های سریع

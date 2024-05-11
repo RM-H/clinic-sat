@@ -14,7 +14,7 @@ const Contact = () => {
   return(
       <>
           <Grid container className='pad' sx={{pb:5}}>
-              <Grid xs={12} className='borderrad1' sx={{backgroundImage:`url("/assets/images/about.jpg")`,backgroundSize:'contain' , backgroundRepeat:'no-repeat' , backgroundAttachment:'fixed' ,mt:'6rem' , minHeight:'16rem' , display:'flex' , alignItems:'center' ,justifyContent:'center' }}>
+              <Grid xs={12} className='borderrad1' sx={{backgroundImage:`url("/assets/images/about.jpg")`,backgroundSize:{xs:'cover' , md:'contain'} , backgroundRepeat:'no-repeat' , backgroundAttachment:'fixed' ,mt:'6rem' , minHeight:'16rem' , display:'flex' , alignItems:'center' ,justifyContent:'center' }}>
 
 
 
