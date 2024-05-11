@@ -29,7 +29,7 @@ const ContactText = () => {
                     </Grid>
 
                     <Grid xs={12} md={5} sx={{ pl: {md:6}}}>
-                        <img src="https://decar.savisnet.ir/img/features/about_img.png" alt="" style={{float: 'left' , maxWidth:'100%'}}/>
+                        <img src="/assets/images/banner1.png" alt="" style={{float: 'left' , maxWidth:'100%'}}/>
 
                     </Grid>
 

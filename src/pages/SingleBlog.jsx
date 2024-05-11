@@ -237,7 +237,7 @@ const SingleBlog = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundAttachment: 'fixed'
             }}>
-                <Grid xs={12} md={12} sx={{p: 4, overflow: 'auto'}}>
+                <Grid xs={12} md={9} sx={{p: 4, overflow: 'auto'}}>
                     {
                         content
                     }

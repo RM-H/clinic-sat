@@ -21,7 +21,7 @@ const Orbit = () => {
                         <div className='orbit-head '>
                             <img src="/assets/images/logo-large.svg" draggable={false} alt=""/>
                             <Typography className='yekan' component={'h1'} sx={{
-                                lineHeight: '3rem',
+                                lineHeight: '4rem',
                                 textAlign: 'center',
                                 fontSize: {xs: '2rem', sm: '3rem'} ,
                                 padding: {xs:'1rem' , sm:0}
@@ -33,7 +33,7 @@ const Orbit = () => {
                                 ستارزاده
                             </Typography>
                             <Typography className='yekan' sx={{mt: 3 , padding: {xs:'1rem' , sm:0}}}>
-                                مجهزترین آزمایشگاه تشخیص آلرژی ، درمان انواع آلرژی با بهترین متدهای دنیا
+                                مجهزترین آزمایشگاه تشخیص آلرژی ، درمان انواع آلرژی با بهترین متدهای دنیا.
                             </Typography>
 
 

@@ -7,7 +7,7 @@ const LandingAbout = () => {
       <>
           <Grid container  className='pad ' sx={{py:6}}>
               <Grid xs={12} md={5}>
-                  <img src="https://decar.savisnet.ir/img/features/about_img.png" alt="" style={{maxWidth:'100%'}}/>
+                  <img src="/assets/images/banner2.png" alt="" style={{maxWidth:'100%'}}/>
 
               </Grid>
 
