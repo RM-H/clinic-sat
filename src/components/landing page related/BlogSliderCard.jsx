@@ -7,17 +7,22 @@ import {
     Typography,
     Chip,
     Switch,
-    FormLabel,
+
     FormControl, FormGroup, FormControlLabel, Tooltip, Divider
 } from "@mui/material";
 import {baseurl} from '../../Services/services.js'
 import {Link} from 'react-router-dom'
-import {useState} from 'react'
+import {useState , useEffect} from 'react'
 import {VisibilityOff, Visibility} from '@mui/icons-material'
 
-const BlogSliderCard = ({date, id, img, title, text}) => {
+const BlogSliderCard = ({date, id, img, title, text,hide}) => {
     // to controll the show of sensitive images
     const [show, setShow] = useState(false)
+    useEffect(() => {
+        if (hide ===0) {
+            setShow(true)
+        }
+    }, []);
 
 
     let txt = function stripTags(text) {
@@ -29,38 +34,45 @@ const BlogSliderCard = ({date, id, img, title, text}) => {
     }
     return (
         <>
-            <Card sx={{maxWidth: '100%'}} className='shadowone'>
-                <FormControl className='clrwhitetp' component="fieldset" sx={{float: 'left', zIndex: 1000}}>
+            <Card sx={{maxWidth: '100%' , height:'100%'}} className='shadowone cardheight'>
 
-                    <FormGroup aria-label="position" row>
-                        <Tooltip placement='top'  title={<span className='yekan'> ممکن است حاوی تصاویر ناخوشایند باشد.</span>}>
-                            <FormControlLabel
+                {/*showing for sensitive images only*/}
+                {
+                 hide ?
+                     <FormControl className='clrwhitetp' component="fieldset" sx={{float: 'left', zIndex: 1000}}>
 
-                                sx={{ml: 0, pr: 3}}
-                                control={<Switch onChange={() => setShow((p) => !p)} color="primary"/>}
-                                label={
+                         <FormGroup aria-label="position" row>
+                             <Tooltip placement='top'  title={<span className='yekan'> ممکن است حاوی تصاویر ناخوشایند باشد.</span>}>
+                                 <FormControlLabel
 
-                                    <span style={{display: 'flex', alignItems: 'center', fontSize: '0.6rem'}}>
+                                     sx={{ml: 0, pr: 3}}
+                                     control={<Switch onChange={() => setShow((p) => !p)} color="primary"/>}
+                                     label={
+
+                                         <span style={{display: 'flex', alignItems: 'center', fontSize: '0.6rem'}}>
                               {
                                   show === true ? <Visibility/> : <VisibilityOff/>
                               }
 
                       </span>
 
-                                }
-                                labelPlacement="start"
-                            />
-                        </Tooltip>
+                                     }
+                                     labelPlacement="start"
+                                 />
+                             </Tooltip>
 
-                    </FormGroup>
-                </FormControl>
+                         </FormGroup>
+                     </FormControl>
+                     :   null
+                }
+
 
                 <CardMedia
                     sx={{height: '23rem', filter: show === true ? 'none' : 'blur(0.4rem)'}}
                     image={`${baseurl}/${img}`}
                     title={title}
                 />
-                <CardContent>
+                <CardContent sx={{flexGrow:1}}>
                     <Typography gutterBottom className='yekan' variant="h6" component="div" sx={{textAlign:'justify'}}>
                         {title}
 
@@ -73,7 +85,7 @@ const BlogSliderCard = ({date, id, img, title, text}) => {
 
                 </CardContent>
                 <Chip className='yekan' label={date}/>
-                <CardActions sx={{justifyContent: 'left'}}>
+                <CardActions sx={{justifyContent: 'left' }}>
 
                     <Link to={`/blogs/${id}`}>
                         <Button className='yekan' variant='contained'>ادامه</Button>

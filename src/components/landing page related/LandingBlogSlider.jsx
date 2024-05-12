@@ -53,7 +53,7 @@ const LandingBlogSlider = () => {
 
 
                                 <Grid key={i.id} xs={12} sx={{py: 3,}}>
-                                    <BlogCard key={i.id} img={i.img} title={i.title} date={i.date_text} id={i.id}
+                                    <BlogCard hide={i.hide} key={i.id} img={i.img} title={i.title} date={i.date_text} id={i.id}
                                               text={i.txt}/>
                                 </Grid>
 

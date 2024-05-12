@@ -1,7 +1,32 @@
 import Grid from '@mui/material/Unstable_Grid2'
 import {Typography, Divider} from '@mui/material'
+import {useEffect, useState} from "react";
+import {getSplash} from "../../Services/services.js";
 
 const ContactText = () => {
+
+    const [data, setData] = useState(false)
+
+    const getData = async () => {
+        const response = await getSplash()
+        if (response) {
+            console.log(response)
+            setData(response.data.info)
+
+
+        } else {
+            alert('مشکل در ارتباط با سرور')
+        }
+    }
+
+
+    useEffect(() => {
+
+        getData()
+    }, []);
+
+
+
     return (
         <>
             <Grid className='margintop' xs={12} sx={{mb: 5}}>
@@ -19,10 +44,9 @@ const ContactText = () => {
 
                         <Typography className='yekan ' variant='body1' component='article'
                                     sx={{textAlign: 'justify', my: 5}}>
-                            کلینیک آلرژی ستارزاده به همراه آزمایشگاه تخصصی در سال …. در ارومیه افتتاح شد که با بکارگیری
-                            از تجهیزات روز دنیا یکی از بزرگترین و مجهزترین کلینیک های پزشکی به شمار می آید. این مجموعه
-                            با بهره گیری از دانش پزشکان مجرب در این حوزه، اقدام به تشخیص نوع بیماری و شروع پروسه درمان
-                            مراجعین می کنند.
+                            {
+                                data!==false ? data.about_text:"...."
+                            }
                         </Typography>
 
 

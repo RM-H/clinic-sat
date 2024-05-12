@@ -46,8 +46,8 @@ const blogslist = () => {
         if (data.items.length > 0) {
 
             content = data.items.map((item) => (
-                <Grid xs={12} md={4} key={item.id}>
-                    <BlogCard key={item.id} id={item.id} text={item.txt} img={item.img} title={item.title} date={item.date_text} />
+                <Grid xs={12} md={4} key={item.id} sx={{p:2}}>
+                    <BlogCard hide={item.hide} key={item.id} id={item.id} text={item.txt} img={item.img} title={item.title} date={item.date_text} />
                 </Grid>
 
 
@@ -80,7 +80,7 @@ const blogslist = () => {
     return (
 
         <>
-            <Grid container className='pad' sx={{py: 9}} spacing={3}>
+            <Grid container className='pad' sx={{py: 9}} >
                 <Grid xs={12} sx={{py: 4, direction: 'rtl', textAlign: 'center'}}>
 
                     <TextField onChange={(e)=> setTimeout(() => setSearch(e.target.value), 1000)} id="outlined-basic" className='width100 ' placeholder='جستجو بین مطالب'

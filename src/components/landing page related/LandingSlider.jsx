@@ -38,11 +38,11 @@ const LandingSlider = () => {
 
                 <Swiper
                     spaceBetween={50}
-                    autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true
-                    }}
+                    // autoplay={{
+                    //     delay: 5000,
+                    //     disableOnInteraction: false,
+                    //     pauseOnMouseEnter: true
+                    // }}
                     breakpoints={
                         {
                             200: {
@@ -61,15 +61,7 @@ const LandingSlider = () => {
                     speed={1618}
                     loop={true}
                     navigation={true}
-                    // pagination={{
-                    //
-                    //     bulletActiveClass:'bulletbg',
-                    //
-                    //
-                    //
-                    //
-                    //
-                    // }}
+
                     modules={[Navigation, Pagination, Autoplay]}
                     style={{height: '100%', width: '100%'}}
 
@@ -77,9 +69,9 @@ const LandingSlider = () => {
 
                     <SwiperSlide>
                         <Grid container sx={{px: 5}}>
-                            <Grid xs={12} sx={{py: 3}}>
+                            <Grid xs={12} sx={{py: 3 }}>
                                 <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 '
-                                     style={{padding: '1rem'}}>
+                                     style={{padding: '1rem' , height:'100%'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         مصطفی کهربا :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -103,8 +95,8 @@ const LandingSlider = () => {
 
                     <SwiperSlide>
                         <Grid container sx={{px: 5}}>
-                            <Grid xs={12} sx={{py: 3}}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
+                            <Grid xs={12} sx={{py: 3 }}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         سایناز جعفری :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -129,7 +121,7 @@ const LandingSlider = () => {
 
 
                             <Grid xs={12} sx={{py: 3}}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         میترا رضایی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -154,7 +146,7 @@ const LandingSlider = () => {
                     <SwiperSlide>
                         <Grid container sx={{px: 5}}>
                             <Grid xs={12} sx={{py: 3}}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         مبین خدایی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -174,7 +166,7 @@ const LandingSlider = () => {
                     <SwiperSlide>
                         <Grid container sx={{px: 5}}>
                             <Grid xs={12} sx={{py: 3}}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         سارا رحیم زاده :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -200,7 +192,7 @@ const LandingSlider = () => {
 
                             <Grid xs={12} sx={{py: 3,}}>
                                 <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 '
-                                     style={{padding: '1rem'}}>
+                                     style={{padding: '1rem', height:'100%'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         پیمان عظیمی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>

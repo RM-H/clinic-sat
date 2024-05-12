@@ -29,6 +29,14 @@ body {
     width: 100%;
 }
 
+
+.cardheight {
+    min-height: 45rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
 /*-------------------------*/
 /*         colors          */
 /*-------------------------*/
@@ -504,6 +512,15 @@ body {
 }
 
 
+
+
+/*-------------------------*/
+/*         msc         */
+/*-------------------------*/
+.blur img {
+    filter: blur(0.3rem);
+}
+
 /*-------------------------*/
 /*         responsive      */
 /*-------------------------*/
@@ -555,6 +572,10 @@ body {
         padding-right: 1rem;
         padding-left: 1rem;
     }
+
+    .cardheight {
+        min-height: auto;
+    }
 }
 
 /*tablets*/
@@ -602,6 +623,9 @@ body {
     .pad {
         padding-right: 1rem;
         padding-left: 1rem;
+    }
+    .cardheight {
+        min-height: auto;
     }
 }
 

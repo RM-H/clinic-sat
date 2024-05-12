@@ -39,12 +39,12 @@ const Servicesbox = () => {
             }}>
                 <Grid xs={12}>
 
-                    <Box className='boxbglight shadowone ' sx={{height: '100%', p: 3, borderRadius: 5}}>
+                    <Box className='boxbglight shadowone ' sx={{height: '100%', pt: 5, px:5, borderRadius: 5}}>
                         <Typography className='yekan ' variant='h4' component={'h2'} sx={{textAlign: 'center'}}>
                             خدمات کلینیک تخصصی آلرژی ستار زاده
                         </Typography>
 
-                        <Grid container spacing={3} sx={{my: 3}}>
+                        <Grid container spacing={3} sx={{mt:3}} >
                             {
                                 content
                             }

@@ -1,8 +1,32 @@
 import Grid from '@mui/material/Unstable_Grid2'
-import Chip from '@mui/material/Chip';
-import {Typography} from '@mui/material'
+
+import {Typography , Chip} from '@mui/material'
+import {useEffect, useState} from "react";
+import {getSplash} from "../../Services/services.js";
+import { Spinner} from '../index.js'
 
 const Orbit = () => {
+
+
+    const [data, setData] = useState(false)
+
+    const getData = async () => {
+        const response = await getSplash()
+        if (response) {
+            console.log(response)
+            setData(response.data.info)
+
+
+        } else {
+            alert('مشکل در ارتباط با سرور')
+        }
+    }
+
+
+    useEffect(() => {
+
+        getData()
+    }, []);
     return (
         <>
             <Grid container sx={{
@@ -26,14 +50,14 @@ const Orbit = () => {
                                 fontSize: {xs: '2rem', sm: '3rem'} ,
                                 padding: {xs:'1rem' , sm:0}
                             }}>
-                                آزمایشگاه تخصصی ایمونولوژی
-
-                                تشخیص پزشکی
-
-                                ستارزاده
+                                {
+                                    data !==false ? data.h1: '...'
+                                }
                             </Typography>
-                            <Typography className='yekan' sx={{mt: 3 , padding: {xs:'1rem' , sm:0}}}>
-                                مجهزترین آزمایشگاه تشخیص آلرژی ، درمان انواع آلرژی با بهترین متدهای دنیا.
+                            <Typography className='yekan' sx={{mt: 3 , padding: {xs:'1rem 4rem' , sm:0}}}>
+                                {
+                                    data !==false ? data.subtitle: '...'
+                                }
                             </Typography>
 
 
@@ -45,7 +69,7 @@ const Orbit = () => {
                             <div className='inner-one-one shadowone'>
                                 <img style={{marginBottom: '0.3rem'}} src="/assets/images/clinic.png" width={64}
                                      height={64} alt=""/>
-                                <Chip className='yekan' color='primary' label='کلینیک تخصیی آلرژی'/>
+                                <Chip className='yekan' color='primary' label='کلینیک تخصصی آلرژی'/>
                             </div>
 
                             <div className='inner-one-two shadowone'>

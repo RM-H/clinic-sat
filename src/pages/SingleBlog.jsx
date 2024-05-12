@@ -10,7 +10,7 @@ import {
     Paper,
     FormControl, FormGroup, Tooltip, FormControlLabel, Switch
 } from '@mui/material'
-import {getBlog,getSplash,baseurl} from '../Services/services.js'
+import {getBlog, getSplash, baseurl} from '../Services/services.js'
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Spinner} from '../components/index.js'
@@ -42,9 +42,15 @@ const SingleBlog = () => {
 
             params: {id: blogID}
         };
+        setData(false)
+        setShow(false)
         const res = await getBlog(options)
         if (res) {
+            if (res.data.blog.hide == 0) {
+                setShow(true)
 
+
+            }
             setData(res.data)
 
 
@@ -67,98 +73,90 @@ const SingleBlog = () => {
     }
 
     useEffect(() => {
-        getdata().then(()=>{
-            let imgs = document.getElementById(blogID)
-            imgs.style.filter='blur(0.3rem)'
-        })
+        getdata().then()
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
         getSplashinfo().then()
 
-    }, []);
-
-    // useEffect(() => {
-    //     let imgs = document.getElementById(blogID)
-    //
-    //     if (imgs){
-    //         if (show===false){
-    //             imgs.style.filter='blur(0.3rem)'
-    //         } else {
-    //             imgs.style.filter='none'
-    //         }
-    //
-    //     }
-    // }, [show]);
-
-
+    }, [blogID]);
 
 
     let content
-    if (data !== false ) {
+    if (data !== false) {
         let imgs = document.getElementById(blogID)
 
-        if (imgs){
-            if (show===false){
-                imgs.style.filter='blur(0.3rem)'
+        if (imgs) {
+            if (show === false) {
+                imgs.style.filter = 'blur(0.3rem)'
             } else {
-                imgs.style.filter='none'
+                imgs.style.filter = 'none'
             }
 
         }
 
 
-
         content =
 
 
-            <Grid container sx={{height:'100%' , flexDirection:'column' , flexWrap:'nowrap'}}>
+            <Grid className={show === false && 'blur'} container
+                  sx={{height: '100%', flexDirection: 'column', flexWrap: 'nowrap'}}>
 
 
                 <Grid xs={12}>
+
                     <Typography component='h1' className='yekan'>
                         {data.blog.title}
+
 
                     </Typography>
                     <Typography variant='caption' className='yekan-regular'>
                         {data.blog.date_text}
                     </Typography>
+                    {
+                        data.blog.hide === 1 ?
+                            <FormControl className='clrwhitetp' component="fieldset" sx={{float: 'left', zIndex: 1000}}>
 
-                    <FormControl className='clrwhitetp' component="fieldset" sx={{float: 'left', zIndex: 1000}}>
-
-                        <FormGroup aria-label="position" row>
-                            <Tooltip placement='top'  title={<span className='yekan'>
+                                <FormGroup aria-label="position" row>
+                                    <Tooltip placement='top' title={<span className='yekan'>
                                 ممکن است حاوی تصاویر ناخوشایند باشد.
 
                                 </span>}>
-                                <FormControlLabel
+                                        <FormControlLabel
 
-                                    sx={{ml: 0, pr: 3}}
-                                    control={<Switch onChange={() => setShow((p) => !p)} color="info"/>}
-                                    label={
+                                            sx={{ml: 0, pr: 3}}
+                                            control={<Switch onChange={() => setShow((p) => !p)} color="info"/>}
+                                            label={
 
-                                        <span style={{display: 'flex', alignItems: 'center', fontSize: '0.6rem'}}>
+                                                <span
+                                                    style={{display: 'flex', alignItems: 'center', fontSize: '0.6rem'}}>
                               {
                                   show === true ? <Visibility/> : <VisibilityOff/>
                               }
 
                       </span>
 
-                                    }
-                                    labelPlacement="start"
-                                />
-                            </Tooltip>
+                                            }
+                                            labelPlacement="start"
+                                        />
+                                    </Tooltip>
 
-                        </FormGroup>
-                    </FormControl>
+                                </FormGroup>
+                            </FormControl>
+                            : null
+                    }
+
+
                 </Grid>
 
-                <Grid xs={12} sx={{height:'100%' , p:3}}>
-                    <Paper elevation={9} className='width100 ' sx={{height:'100%' ,p:2 , textAlign:'center'}}>
-                        <img src={`${baseurl}/${data.blog.img}`} id={data.blog.id}  alt={data.blog.title}/>
+                <Grid xs={12} sx={{height: '100%', p: 3}}>
+                    <Paper elevation={9} className='width100 ' sx={{height: '100%', p: 2, textAlign: 'center'}}>
+                        <img src={`${baseurl}/${data.blog.img}`} id={data.blog.id} alt={data.blog.title}
+                             style={{maxWidth: '100%'}}/>
 
-                        <Typography dangerouslySetInnerHTML={{__html:data.blog.txt}} className='yekan-regular' variant='body2' component='article' sx={{textAlign:'justify' , my:3}}/>
+                        <Typography dangerouslySetInnerHTML={{__html: data.blog.txt}} className='yekan-regular'
+                                    variant='body2' component='article' sx={{textAlign: 'justify', my: 3}}/>
                     </Paper>
 
                 </Grid>
@@ -173,58 +171,53 @@ const SingleBlog = () => {
     }
 
     let side
-    if (splash!==false) {
+    if (splash !== false) {
 
         side =
-            splash.map((i)=>(
+            splash.map((i) => (
 
                 <>
 
 
+                    <Link key={i.id} to={`/blogs/${i.id}`}  style={{color: 'inherit', textDecoration: 'none'}}>
 
-                    <Link key={i.id} to={`/blogs/${i.id}`}  style={{color:'inherit' , textDecoration:'none'}}>
 
-
-                    <ListItem alignItems="flex-start" onClick={()=>{
-                        setData(false);
-                       getdata().then();
-                    }}>
-                        <ListItemAvatar>
-                            <Avatar alt="P" src={`${baseurl}/${i.img}`} />
-                        </ListItemAvatar>
-                        <ListItemText sx={{textAlign:'right'}}
-                            primary={
-                                <span className='yekan' >
-                                { i.title}
+                        <ListItem alignItems="flex-start">
+                            <ListItemAvatar>
+                                <Avatar alt="P" src={`${baseurl}/${i.img}`}/>
+                            </ListItemAvatar>
+                            <ListItemText sx={{textAlign: 'right'}}
+                                          primary={
+                                              <span className='yekan'>
+                                {i.title}
                                 </span>
-                           }
-                            secondary={
-                                <>
-                                    <Typography
-                                        sx={{ display: 'inline' }}
-                                        className='yekan'
-                                        component="div"
-                                        variant="caption"
-                                        color="text.secondary"
-                                        dangerouslySetInnerHTML={{__html:txt(i.txt)}}
-                                    >
+                                          }
+                                          secondary={
+                                              <>
+                                                  <Typography
+                                                      sx={{display: 'inline'}}
+                                                      className='yekan'
+                                                      component="div"
+                                                      variant="caption"
+                                                      color="text.secondary"
 
-                                    </Typography>
+                                                  >
 
-                                </>
-                            }
-                        />
-                    </ListItem>
+                                                      {i.date_text}
+                                                  </Typography>
+
+                                              </>
+                                          }
+                            />
+                        </ListItem>
                     </Link>
-                    <Divider variant="inset" component="li" />
+                    <Divider variant="inset" component="li"/>
 
                 </>
             ))
 
 
-
     }
-
 
 
     return (
@@ -242,19 +235,19 @@ const SingleBlog = () => {
                         content
                     }
                 </Grid>
-                <Grid xs={12} md={3}  sx={{
+                <Grid xs={12} md={3} sx={{
                     position: 'sticky', top: '20vh',
                     height: ' 100%'
                 }}>
-                    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                    <List sx={{width: '100%', bgcolor: 'background.paper'}}>
 
-                        <ListItem alignItems="center" sx={{justifyContent:'center'}}>
+                        <ListItem alignItems="center" sx={{justifyContent: 'center'}}>
 
-                           <Typography className='yekan clronetext' component='h3' >
-                               جدیدترین های بلاگ
-                           </Typography>
+                            <Typography className='yekan clronetext' component='h3'>
+                                جدیدترین های بلاگ
+                            </Typography>
                         </ListItem>
-                        <Divider variant="inset" component="li" />
+                        <Divider variant="inset" component="li"/>
 
                         {side}
                     </List>

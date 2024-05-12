@@ -8,6 +8,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Mainlayout/>,
+
         children:[
             {
                 path:'/',
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
                 path:'/blogs/:blogID',
                 element:<SingleBlog/>
             }
+
         ]
     },
 ]);

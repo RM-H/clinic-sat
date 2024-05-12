@@ -2,8 +2,37 @@ import Grid from '@mui/material/Unstable_Grid2'
 import {ListItem, ListItemButton, ListItemIcon, Typography, List, ListItemText,Divider} from '@mui/material'
 import {PhoneOutlined,Instagram,PlaceOutlined} from '@mui/icons-material'
 import {Tips} from './index.js'
+import {useEffect, useState} from "react";
+import {getSplash} from "../Services/services.js";
 
 const Footer = () => {
+
+    const [data, setData] = useState(false)
+
+    const getData = async () => {
+        const response = await getSplash()
+        if (response) {
+            console.log(response)
+            setData(response.data.info)
+
+
+        } else {
+            alert('مشکل در ارتباط با سرور')
+        }
+    }
+
+
+    useEffect(() => {
+
+        getData()
+    }, []);
+
+
+
+
+
+
+
   return(
       <>
           <Grid container className='clrthree pad' component={'footer'} sx={{minHeight:'15rem' , pt:4  }}>
@@ -13,7 +42,9 @@ const Footer = () => {
                       آزمایشگاه تخصصی ایمونولوژی و تشخیص پزشکی ستار زاده
                   </Typography>
                   <Typography className='yekan' component='article' variant='subtitle2' sx={{mt:2}}>
-                      کلینیک ایمونولوژِی ستارزاده در ارومیه، ارائه دهنده تمامی خدمات بیماری های خود ایمنی، انواع آلرژی، اختلالات سیستم ایمنی، نقص ایمنی به همراه آزمایشگاه شبانه روزی.
+                      {
+                          data !==false ? data.footer: '...'
+                      }
                   </Typography>
               </Grid>
 
@@ -32,15 +63,16 @@ const Footer = () => {
                               <ListItemIcon>
                                   <PhoneOutlined />
                               </ListItemIcon>
-                              <ListItemText sx={{textAlign:'right'}}  primary="123456789" />
+                              <ListItemText sx={{textAlign:'right'}}  primary={<a style={{color:'inherit' , textDecoration:'none'}} href={`tel:${data.phone}`}>{data.phone}</a>} />
                           </ListItemButton>
                       </ListItem>
                       <ListItem disablePadding>
                           <ListItemButton>
                               <ListItemIcon>
+
                                   <PlaceOutlined />
                               </ListItemIcon>
-                              <ListItemText sx={{textAlign:'right'}}  primary="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae praesentium rem repudiandae voluptatem. " />
+                              <ListItemText sx={{textAlign:'right'}}  primary={<span className='yekan-regular' >{data.address}</span>} />
                           </ListItemButton>
                       </ListItem>
                       <ListItem disablePadding>
@@ -48,7 +80,7 @@ const Footer = () => {
                               <ListItemIcon>
                                   <Instagram />
                               </ListItemIcon>
-                              <ListItemText sx={{textAlign:'right'}} primary="placeholder" />
+                              <ListItemText sx={{textAlign:'right'}} primary={<a style={{color:'inherit' , textDecoration:'none'}} href={`tel:${data.phone}`}>{data.instagram}</a>} />
                           </ListItemButton>
                       </ListItem>
                   </List>
