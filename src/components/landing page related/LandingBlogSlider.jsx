@@ -17,6 +17,7 @@ import {BlogCard, Spinner} from '../index.js'
 
 
 import {getSplash} from '../../Services/services.js'
+import {Link} from "react-router-dom";
 
 const LandingBlogSlider = () => {
 
@@ -53,7 +54,8 @@ const LandingBlogSlider = () => {
 
 
                                 <Grid key={i.id} xs={12} sx={{py: 3,}}>
-                                    <BlogCard hide={i.hide} key={i.id} img={i.img} title={i.title} date={i.date_text} id={i.id}
+                                    <BlogCard hide={i.hide} key={i.id} img={i.img} title={i.title} date={i.date_text}
+                                              id={i.id}
                                               text={i.txt}/>
                                 </Grid>
 
@@ -87,8 +89,11 @@ const LandingBlogSlider = () => {
                         درباره آلرژی بیشتر بدانید ...
 
                     </Typography>
-                    <Button className='yekan' variant="contained" sx={{mr: 'auto'}}>مشاهده بیشتر</Button>
+                    <Link to={'/blogs/'} style={{marginRight:'auto'}}>
 
+
+                        <Button className='yekan' variant="contained">مشاهده بیشتر</Button>
+                    </Link>
                 </Grid>
 
                 <Swiper

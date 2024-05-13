@@ -23,7 +23,7 @@ const LandingSlider = () => {
                 <Grid xs={12} sx={{
                     display: 'flex',
                     flexDirection: 'row',
-                    height: '33%',
+                    height: '40%',
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}>
@@ -63,15 +63,15 @@ const LandingSlider = () => {
                     navigation={true}
 
                     modules={[Navigation, Pagination, Autoplay]}
-                    style={{height: '100%', width: '100%'}}
+                    style={{height: '100%', width: '100%' , paddingTop:'2rem' , paddingBottom:'2rem'}}
 
                 >
 
-                    <SwiperSlide>
-                        <Grid container sx={{px: 5}}>
-                            <Grid xs={12} sx={{py: 3 }}>
+                    <SwiperSlide style={{height:'100%'}} >
+                        <Grid container sx={{px: 5 , height:'100%'}}>
+                            <Grid xs={12} sx={{height:'100%' }}>
                                 <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 '
-                                     style={{padding: '1rem' , height:'100%'}}>
+                                     style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         مصطفی کهربا :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -94,9 +94,9 @@ const LandingSlider = () => {
 
 
                     <SwiperSlide>
-                        <Grid container sx={{px: 5}}>
-                            <Grid xs={12} sx={{py: 3 }}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
+                        <Grid container sx={{px: 5 }}>
+                            <Grid xs={12} sx={{ }}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         سایناز جعفری :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -120,8 +120,8 @@ const LandingSlider = () => {
                         <Grid container sx={{px: 5}}>
 
 
-                            <Grid xs={12} sx={{py: 3}}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
+                            <Grid xs={12} sx={{}}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         میترا رضایی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -145,8 +145,8 @@ const LandingSlider = () => {
 
                     <SwiperSlide>
                         <Grid container sx={{px: 5}}>
-                            <Grid xs={12} sx={{py: 3}}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
+                            <Grid xs={12} sx={{}}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         مبین خدایی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -165,8 +165,8 @@ const LandingSlider = () => {
 
                     <SwiperSlide>
                         <Grid container sx={{px: 5}}>
-                            <Grid xs={12} sx={{py: 3}}>
-                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem', height:'100%'}}>
+                            <Grid xs={12} sx={{}}>
+                                <div className='width100 yekan clrseven shadowone borderrad1' style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         سارا رحیم زاده :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>
@@ -190,9 +190,9 @@ const LandingSlider = () => {
                         <Grid container sx={{px: 5}}>
 
 
-                            <Grid xs={12} sx={{py: 3,}}>
+                            <Grid xs={12} sx={{}}>
                                 <div className='width100 yekan  borderrad1 clrseven shadowone borderrad1 '
-                                     style={{padding: '1rem', height:'100%'}}>
+                                     style={{padding: '1rem'}}>
                                     <Typography className='yekan' sx={{my: 2}} variant='subtitle1' component='p'>
                                         پیمان عظیمی :
                                         <img src="/assets/images/person.png" style={{float: 'left'}} alt=""/>

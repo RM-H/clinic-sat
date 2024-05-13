@@ -54,7 +54,7 @@ const SingleBlog = () => {
             setData(res.data)
 
 
-            console.log(res.data)
+
         }
     }
 
@@ -64,7 +64,7 @@ const SingleBlog = () => {
         const response = await getSplash()
         if (response) {
             setSplash(response.data.blogs)
-            console.log(response.data)
+
 
 
         } else {

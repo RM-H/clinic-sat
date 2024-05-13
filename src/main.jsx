@@ -2,12 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Mainlayout  from './Layout/Mainlayout.jsx'
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
-import {Landing,Contact,SingleBlog,Blogs} from './pages/index.js'
+import {Landing,Contact,SingleBlog,Blogs,Notfound} from './pages/index.js'
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Mainlayout/>,
+
+
 
         children:[
             {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path:'/blogs/:blogID',
                 element:<SingleBlog/>
+            } ,
+            {
+                path: '/*',
+                element: <Notfound/>
             }
 
         ]

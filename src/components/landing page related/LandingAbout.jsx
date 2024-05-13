@@ -12,7 +12,7 @@ const LandingAbout = () => {
     const getData = async () => {
         const response = await getSplash()
         if (response) {
-            console.log(response)
+
             setData(response.data.info)
 
 

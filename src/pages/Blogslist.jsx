@@ -21,7 +21,7 @@ const blogslist = () => {
         if (res){
 
             setData(res.data)
-            console.log(res.data)
+
         }
     }
 

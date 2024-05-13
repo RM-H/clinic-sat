@@ -521,6 +521,10 @@ body {
     filter: blur(0.3rem);
 }
 
+.swiper-wrapper{
+    align-items: center;
+}
+
 /*-------------------------*/
 /*         responsive      */
 /*-------------------------*/
