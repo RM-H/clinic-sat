@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import ReactDOM from 'react-dom/client'
 import Mainlayout  from './Layout/Mainlayout.jsx'
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import {Landing,Contact,SingleBlog,Blogs,Notfound} from './pages/index.js'
+import {getSplash} from "./Services/services.js";
+
+
+
+
 
 const router = createBrowserRouter([
     {

@@ -4,28 +4,10 @@ import {useEffect, useState} from "react";
 import {getSplash} from "../../Services/services.js";
 
 
-const LandingAbout = () => {
+const LandingAbout = ({data}) => {
 
 
-    const [data, setData] = useState(false)
 
-    const getData = async () => {
-        const response = await getSplash()
-        if (response) {
-
-            setData(response.data.info)
-
-
-        } else {
-            alert('مشکل در ارتباط با سرور')
-        }
-    }
-
-
-    useEffect(() => {
-
-        getData()
-    }, []);
 
 
     return (
@@ -49,7 +31,7 @@ const LandingAbout = () => {
                                 sx={{textAlign: 'justify', my: 5}}>
 
                         {
-                            data!==false ? data.about_text:"...."
+                            data!==false ? data.info.about_text:"...."
                         }
 
                     </Typography>

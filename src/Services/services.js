@@ -1,7 +1,7 @@
 
 import axios from "axios"; axios
-export const url = 'https://clinic.safirannoavari.com/api/v1'
-export const baseurl = "https://clinic.safirannoavari.com"
+export const url = 'https://server.clinicdrsattarzadeh.com/api/v1'
+export const baseurl = "https://server.clinicdrsattarzadeh.com"
 
 export const getSplash = ( ) => {
     return axios.get(`${url}/splash`)

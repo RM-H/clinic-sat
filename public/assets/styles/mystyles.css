@@ -529,9 +529,62 @@ body {
 /*         responsive      */
 /*-------------------------*/
 
+/*small mobile*/
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+    .container {
+        width: 100vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .orbit-head {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.12);
+        width: 93vw;
+        height: 93vw;
+        padding: 0;
+        z-index: 1000;
+        backdrop-filter: blur(0.1rem);
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        top: 5%;
+        box-shadow: 0px 0px 18px 1px #1a5ca4;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    .orbit-head img {
+        width: 3rem;
+        position: absolute;
+        top: 0;
+        right: 8rem;
+
+        z-index: -1;
+        /*animation: logoanimation 6s linear infinite;*/
+    }
+
+    .one {
+        display: none;
+    }
+
+    .pad {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .cardheight {
+        min-height: auto;
+    }
+}
+
+
 
 /*mobile*/
-@media only screen and (max-width: 600px) {
+@media only screen  and (min-width: 400px) and (max-width: 600px) {
     .container {
         width: 100vw;
         margin-right: auto;
@@ -633,6 +686,15 @@ body {
     }
 }
 
-/*@media only screen and (min-width: 768px) and (max-width: 959px) {*/
-/*    */
-/*}*/
+
+
+/*125 zoom desktops*/
+@media only screen and (max-width: 1600px) {
+    .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+}

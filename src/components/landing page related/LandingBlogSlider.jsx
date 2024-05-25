@@ -19,33 +19,16 @@ import {BlogCard, Spinner} from '../index.js'
 import {getSplash} from '../../Services/services.js'
 import {Link} from "react-router-dom";
 
-const LandingBlogSlider = () => {
+const LandingBlogSlider = ({data}) => {
 
 
-    const [data, setData] = useState(false)
 
-    const getData = async () => {
-        const response = await getSplash()
-        if (response) {
-            setData(response.data.blogs)
-
-
-        } else {
-            alert('مشکل در ارتباط با سرور')
-        }
-    }
-
-
-    useEffect(() => {
-
-        getData()
-    }, []);
 
     let content
 
     if (data !== false) {
         content =
-            data.map((i) => {
+            data.blogs.map((i) => {
                 return (
                     <>
 
